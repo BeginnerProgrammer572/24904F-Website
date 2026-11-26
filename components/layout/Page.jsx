@@ -23,7 +23,7 @@ export default function Page({ hero, children }) {
           </div>
         )}
         <div className="hero-in">
-          {above && <p className="above">{above}</p>}
+          {above && <p className="above"><span>{above}</span></p>}
           <h1>
             {title}
             {em && <> <em>{em}</em></>}
