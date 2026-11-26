@@ -95,26 +95,10 @@
   .handle-glyph { flex: none; width: .9em; height: auto; }
   /* A subsection with one or two photos keeps normal tile widths, not stretched. */
   .gal.few { grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 340px)); }
-  /* A header that shows its whole photo: never cropped or enlarged, on black, with
-     the text beside it on wide screens and above it otherwise. It does not stick,
-     so that a header taller than the screen can still be scrolled through. */
-  .hero.fit { position: relative; flex-direction: column; align-items: stretch; min-height: 0; padding-top: 77px; background: #0e0e0e; --top: 77px; }
-  .hero.fit::before { background: none; }
-  .hero.fit .hero-img { position: static; display: flex; justify-content: center; }
-  .hero.fit .hero-img img { width: min(100%, 1651px, (100svh - var(--top)) * 1651 / 2000); height: auto; }
-  .hero.fit .hero-in { order: -1; padding-top: 24px; padding-bottom: 24px; }
-  .hero.fit .hero-in::before { content: none !important; }
-  .hero.fit + .sheet { margin-top: 0; }
-  /* Room for the seasons bar shown on touch and narrow screens. */
-  @media (hover: none), (max-width: 760px) {
-    .hero.fit { padding-top: 122px; --top: 122px; }
-  }
-  @media (min-width: 1024px) {
-    .hero.fit { flex-direction: row; align-items: center; justify-content: center; gap: 24px; padding-inline: 24px; }
-    .hero.fit .hero-in { order: 0; flex: 0 1 560px; width: auto; margin: 0; }
-    .hero.fit .hero-img { flex: none; order: 1; }
-    .hero.fit .hero-img img { width: min(55vw, 1651px, (100svh - var(--top)) * 1651 / 2000); }
-  }
+  /* A tall header photo (about 0.83 wide to 1 high): as tall as the whole photo at
+     full width (121vw), but no taller than the screen. Cover still fills it, so
+     there are no bars; a taller box simply crops less. */
+  .hero.short.portrait { min-height: min(100svh, 121.14vw); padding-top: 122px; }
   .sub-gallery + .sub-gallery { margin-top: 28px; }
   .hero.row a:hover { color: var(--color-gold); }
   .hero-in { position: relative; z-index: 2; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 20px 56px; }

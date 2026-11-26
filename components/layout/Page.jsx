@@ -7,22 +7,22 @@ import Reveals from "@/components/motion/Reveals";
 // so the first child of a page must not be the sticky hero itself.
 export default function Page({ hero, children }) {
   // `row` centres the title as one line, for a header with no photo; `above` is a line over it.
-  // `fit` shows the whole header photo instead of cropping it to fill.
-  const { title, em, sub, chips, photo, position = "center 30%", row, above, tall, fit } = hero;
+  // `portrait` gives a tall header photo more height, so that less of it is cropped.
+  const { title, em, sub, chips, photo, position = "center 30%", row, above, tall, portrait } = hero;
   return (
     <main>
-      <div className={["hero", tall ? "tall" : "short", row && "row", fit && "fit"].filter(Boolean).join(" ")}>
+      <div className={["hero", tall ? "tall" : "short", row && "row", portrait && "portrait"].filter(Boolean).join(" ")}>
         {photo && (
           <div className="hero-img">
             <Image
               src={photo}
               alt=""
-              fill={!fit}
+              fill
               // The largest thing on screen: fetch it first, never lazily.
               loading="eager"
               fetchPriority="high"
-              sizes={fit ? "(min-width: 1024px) 55vw, 100vw" : "100vw"}
-              style={fit ? undefined : { objectPosition: position }}
+              sizes="100vw"
+              style={{ objectPosition: position }}
             />
           </div>
         )}

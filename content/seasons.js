@@ -17,7 +17,7 @@ export const seasons = [
     ],
     robot: {
       name: "Bebop",
-      desc: "A redesign is underway this season, with full CAD planned through late November and the build right after. This is the first year the team has used sensors and PID.",
+      desc: "A redesign is underway this season, with full CAD planned through late November and the build right after. This is the first year the team has used sensors, PID, CAD tools (Fusion 360 and Onshape) and a digital notebook for better team collaboration.",
       specs: [
         ["Drivetrain", "6 motors, 55 W (the rule cap)"],
         ["Lift", "Double reverse four-bar, 2 motors (22 W)"],
@@ -26,7 +26,7 @@ export const seasons = [
         ["Other", "Toggle mechanism, front mesh"],
         ["Code", "C++ on PROS with EZ-Template"],
         ["CAD", "Onshape and Fusion 360"],
-        ["First year using", "Sensors and PID"],
+        ["First year using", "Sensors, PID, CAD (Fusion 360 and Onshape), digital notebook"],
       ],
     },
     results: [
@@ -74,8 +74,9 @@ export const seasons = [
     level: "10th grade · 2nd season",
     // The header only; the home page card for this season stays without a photo.
     header: p.pbState2,
-    // Show the whole photo, uncropped.
-    headerFit: true,
+    // A tall photo: give the header more height, and favour its lower left.
+    headerPortrait: true,
+    position: "30% 70%",
     blurb: "A Build Award and a quarterfinal run at State, reached through a skills-only Last Chance tournament.",
     stats: [
       { v: "Build", k: "Award at State" },
@@ -85,10 +86,10 @@ export const seasons = [
     ],
     robot: {
       name: "",
-      desc: "The State robot is the design that won the Build Award, and it was a very special build for the team. This was the year the team moved to PROS (C++) and first used polycarbonate, pistons and flex wheels, on a 3 gap drivetrain. The league playoffs robot is shown further down, under its own heading.",
+      desc: "The State robot is the design that won the Build Award, and it was a very special build for the team. This was the year the team first used polycarbonate, pistons and flex wheels, on a 3 gap drivetrain. The code was written in C++. The league playoffs robot is shown further down, under its own heading.",
       specs: [
         ["Game", "Push Back"],
-        ["Code", "C++ on PROS"],
+        ["Code", "C++"],
         ["Drivetrain", "66W, 3 gap"],
         ["Intake", "11W"],
         ["Outtake", "11W"],

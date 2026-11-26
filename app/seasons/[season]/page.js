@@ -33,7 +33,7 @@ export default async function SeasonPage({ params }) {
         chips: season.stats,
         photo: season.header ?? season.photo,
         position: season.position,
-        fit: season.headerFit,
+        portrait: season.headerPortrait,
       }}
     >
       <section className="blk">

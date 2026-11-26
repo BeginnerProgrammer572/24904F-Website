@@ -7,7 +7,8 @@ export const pages = {
       { title: "Autonomous Planner", text: "A tool for planning autonomous routes on the field. It will be hosted here once it is ready." },
       { title: "CAD", text: "Robots are designed in CAD using Onshape and Fusion 360 before anything is built." },
       { title: "Robot Code", text: "Written in C++ on PROS with the EZ-Template library, including distance-sensor resets." },
-      { title: "PID, Tracking Wheels and Motor Encoders", text: "PID control, tracking wheels and motor encoders work together so the robot drives and turns accurately and knows where it is on the field." },
+      { title: "PID & IMU", text: "PID control and the IMU work together so the robot drives and turns accurately." },
+      { title: "Motor Encoders & Tracking Wheels", text: "Motor encoders and tracking wheels work together so the robot knows where it is on the field." },
     ],
   },
   team: {

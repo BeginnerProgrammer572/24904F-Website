@@ -29,7 +29,7 @@ This is the personal website for VEX V5 team 24904F, Foothill High School, Baker
 |---|---|
 | `/` | Hero, seasons, competition photos, trophies, awards, how we build, about |
 | `/seasons/[season]` | `26-27`, `25-26`, `24-25`: robot, specs, results, calendar, photo sliders |
-| `/software` | Autonomous planner (coming later), CAD, robot code, PID/tracking wheels/encoders, PID chart |
+| `/software` | Autonomous planner (coming later), CAD, robot code, PID & IMU, motor encoders & tracking wheels, PID chart |
 | `/team` | Mission, students, coaches, RoboSaurus |
 | `/awards` | Awards by season. The header photo is the trophy case; there is no separate Trophy Case section |
 | `/media` | Header with `24904` and the horse above a row of the team logo and `@foothill_robotics`, then the gallery with full-screen viewer. A QR code will point here, so keep this path stable |
@@ -73,10 +73,12 @@ Added from the updated `reference/index.html` 2025-26 entry, which is the source
 | `pb-tournament-front.jpg` | League playoffs robot, front | Competition |
 | `pb-bench-front.jpg` | League playoffs robot on the bench | Robots |
 
-- On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card), shown whole: never cropped or enlarged, shrunk to fit the screen, on black, with the title beside it on wide screens and above it otherwise. This header does not stick.
+- On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card). It is a cover-style header with no empty bars, made taller than other season headers (the whole photo's height at full width, at most the screen height) so less is cropped, favouring the lower left (`30% 70%`).
+- The 25-26 code is listed as "C++" (not "C++ on PROS"), and the description says "The code was written in C++." instead of saying the team moved to PROS that year (this differs from `reference/index.html`).
 - The Photos section has two subsections: "State robot" (`pb-state-1.jpg`, `pb-state-2.jpg`) and "League playoffs robot" (drivetrain, tournament angle, tournament front, bench front, then the video).
 - **Approved exception to the one-photo-per-page rule, this page only:** `pb-state-2.jpg` is both the header and in "State robot".
-- The 26-27 robot has a "First year using: Sensors and PID" spec row and the sentence "This is the first year the team has used sensors and PID."
+- The 26-27 robot has the spec row "First year using: Sensors, PID, CAD (Fusion 360 and Onshape), digital notebook" and the sentence "This is the first year the team has used sensors, PID, CAD tools (Fusion 360 and Onshape) and a digital notebook for better team collaboration."
+- Software page cards: Autonomous Planner, CAD, Robot Code, "PID & IMU" and "Motor Encoders & Tracking Wheels". No tuning values or sensor models.
 - The robot description's last sentence reads "The league playoffs robot is shown further down, under its own heading." (changed from "...further down the photos." in `reference/index.html`).
 - Video: `public/video/pb-driver-view.mp4` (poster `pb-driver-view-poster.jpg`), below the photos on the 25-26 page only: controls, muted, playsinline, preload metadata, no autoplay. The Media gallery shows images only, so the video is not there.
 
