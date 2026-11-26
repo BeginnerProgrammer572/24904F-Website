@@ -32,7 +32,7 @@ This is the personal website for VEX V5 team 24904F, Foothill High School, Baker
 | `/software` | Autonomous planner (coming later), CAD, robot code, PID/tracking wheels/encoders, PID chart |
 | `/team` | Mission, students, coaches, RoboSaurus |
 | `/awards` | Awards by season. The header photo is the trophy case; there is no separate Trophy Case section |
-| `/media` | Header row with the team logo and `@foothill_robotics`, then the gallery with full-screen viewer. A QR code will point here, so keep this path stable |
+| `/media` | Header with `24904F` above a row of the team logo and `@foothill_robotics`, then the gallery with full-screen viewer. A QR code will point here, so keep this path stable |
 | `/sponsors` | Logos, how to sponsor, coach contacts |
 
 Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new routes on the client.
@@ -47,9 +47,11 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Button label for sponsorship: `SPONSOR US`.
 - No shadows or glows anywhere, including inside React Bits components. Header photos keep a flat dark overlay for contrast. Keyboard focus is a solid outline.
 - The nav team logo is 57 px (30% larger than the original 44 px) on all screens, in proportion.
-- The Media header is one centred row: the team logo (on a square white block, not redrawn or recoloured) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/. It fits one row at 375 px.
+- The Media header has `24904F` centred in the heading font, with comfortable space, above one centred row (the group sits low in the header, clear of the nav): the team logo (on a square white block, not redrawn or recoloured) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/. It fits one row at 375 px.
 
 ## Sponsor logo loop
+- The section heading is `THANK YOU TO OUR SPONSORS!`, centred above the logos (it replaces `Sponsors`).
+- Loop logos are 67.2 px tall (20% larger than before) in a 133 px strip, never wider than the strip. Still-grid logos are also 20% larger where their tile allows; tiles do not change size.
 - Logos slide continuously at one constant speed. No pause button, and no pause or slowdown on hover, focus, touch, click or scroll.
 - Seamless at any screen width.
 - Under `prefers-reduced-motion` (and without JavaScript), a still grid of all logos replaces the loop. Never show both.

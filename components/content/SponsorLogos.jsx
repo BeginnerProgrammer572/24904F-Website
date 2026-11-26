@@ -16,8 +16,8 @@ export default function SponsorLogos({ sponsors }) {
         <LogoLoop
           logos={loopItems(sponsors)}
           speed={60}
-          // Keeps the widest logo (Wonderful Giving, 520x91) inside a 375 px screen.
-          logoHeight={56}
+          // globals.css keeps the widest logo (Wonderful Giving) within the strip.
+          logoHeight={67.2}
           gap={64}
           draggable={false}
           intro={false}
@@ -29,7 +29,7 @@ export default function SponsorLogos({ sponsors }) {
       <ul className="logos">
         {sponsors.map((s) => (
           <li key={s.name}>
-            <Image src={s.logo} alt={`${s.name} logo`} sizes="260px" />
+            <Image src={s.logo} alt={`${s.name} logo`} sizes="312px" />
           </li>
         ))}
       </ul>

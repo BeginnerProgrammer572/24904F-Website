@@ -2,7 +2,7 @@ import Image from "next/image";
 import { External } from "@/components/content/blocks";
 import MediaGallery from "@/components/content/MediaGallery";
 import Page from "@/components/layout/Page";
-import { config } from "@/content/config";
+import { config, site } from "@/content/config";
 import { media } from "@/content/media";
 import { pages } from "@/content/pages";
 import { photos } from "@/content/photos";
@@ -19,7 +19,7 @@ export default function Media() {
     </>
   );
   return (
-    <Page hero={{ title, row: true }}>
+    <Page hero={{ title, row: true, above: site.number }}>
       <MediaGallery sections={media} />
     </Page>
   );

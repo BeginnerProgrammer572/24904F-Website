@@ -65,7 +65,9 @@
   /* Media header: the logo and handle on one centred row, no photo. */
   .hero.row { background: #111; align-items: center; }
   .hero.row::before { background: none; }
+  .hero.row { padding-top: 190px; }
   .hero.row .hero-in { padding-bottom: 0; }
+  .hero.row .above { margin: 0 0 .4em; text-align: center; font: 900 clamp(28px, 8vw, 80px)/1 var(--font-display); color: var(--color-gold); }
   .hero.row h1 { display: flex; align-items: center; justify-content: center; gap: .3em; white-space: nowrap; text-transform: none; font-size: clamp(28px, 8vw, 80px); line-height: 1; }
   .handle-logo { flex: none; display: block; width: 1.5em; height: 1.5em; padding: .1em; background: #fff; }
   .handle-logo img { width: 100%; height: 100%; object-fit: contain; }
@@ -109,7 +111,9 @@
   .gal img { width: 100%; height: 300px; object-fit: cover; transition: transform .5s; }
   .gal figure:hover img { transform: scale(1.05); }
   .gal img.tall { height: 400px; }
-  .logo-band { display: none; background: #fff; padding: 35px 0; }
+  .logo-band { display: none; background: #fff; padding: 29px 0; container-type: inline-size; }
+  /* No logo is wider than the strip; object-fit keeps its proportions. */
+  .logo-band img { max-width: 100cqw; }
 
   .square-btn { width: 44px; height: 44px; flex: none; background: rgb(14 14 14 / .85); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
   .square-btn:hover { background: #000; }
@@ -145,8 +149,12 @@
   .person span { color: var(--color-muted); font-size: 14px; }
 
   .logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 14px; }
-  .logos li { background: #fff; min-height: 170px; padding: 18px; display: grid; place-items: center; }
-  .logos img { max-width: 100%; max-height: 120px; width: auto; height: auto; }
+  .logos li { background: #fff; min-height: 170px; padding: 13px 18px; display: grid; place-items: center; }
+  .logos img { max-width: 100%; max-height: 144px; width: auto; height: auto; }
+  /* Gives the widest logo room to be 312 px on phones. */
+  @media (max-width: 760px) {
+    .logos li { padding-inline: 15px; }
+  }
   /* Exactly one of the two sponsor displays shows. */
   @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
     .logo-band { display: block; }

@@ -11,7 +11,7 @@ export default function Sponsors() {
   return (
     <Page hero={pages.sponsors.hero}>
       <section className="blk">
-        <h2>Sponsors</h2>
+        <h2 className="text-center !mb-4">THANK YOU TO OUR SPONSORS!</h2>
         <SponsorLogos sponsors={sponsors} />
       </section>
       <section className="blk">
