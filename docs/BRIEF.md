@@ -31,8 +31,8 @@ This is the personal website for VEX V5 team 24904F, Foothill High School, Baker
 | `/seasons/[season]` | `26-27`, `25-26`, `24-25`: robot, specs, results, calendar, photo sliders |
 | `/software` | Autonomous planner (coming later), CAD, robot code, PID/tracking wheels/encoders, PID chart |
 | `/team` | Mission, students, coaches, RoboSaurus |
-| `/awards` | Trophy case and awards by season |
-| `/media` | Gallery with full-screen viewer. A QR code will point here, so keep this path stable |
+| `/awards` | Awards by season. The header photo is the trophy case; there is no separate Trophy Case section |
+| `/media` | Header row with the team logo and `@foothill_robotics`, then the gallery with full-screen viewer. A QR code will point here, so keep this path stable |
 | `/sponsors` | Logos, how to sponsor, coach contacts |
 
 Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new routes on the client.
@@ -45,6 +45,34 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Season labels use the `26-27` format. Write OVERRIDE in capitals where it labels the season menu.
 - The home title does not show "24904F".
 - Button label for sponsorship: `SPONSOR US`.
+- No shadows or glows anywhere, including inside React Bits components. Header photos keep a flat dark overlay for contrast. Keyboard focus is a solid outline.
+- The nav team logo is 57 px (30% larger than the original 44 px) on all screens, in proportion.
+- The Media header is one centred row: the team logo (on a square white block, not redrawn or recoloured) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/. It fits one row at 375 px.
+
+## Sponsor logo loop
+- Logos slide continuously at one constant speed. No pause button, and no pause or slowdown on hover, focus, touch, click or scroll.
+- Seamless at any screen width.
+- Under `prefers-reduced-motion` (and without JavaScript), a still grid of all logos replaces the loop. Never show both.
+
+## One photo per page
+Each photo appears at most once per page, counting headers, cards, galleries, sliders and backgrounds. The full-screen viewer, the nav logo, the Media header logo and the loop's hidden copies do not count. When a header or card uses a shot, keep that placement. Do not delete image files or substitute other photos.
+
+Same shot (keep the left one). The list lives in `content/sameShot.js`:
+
+| Keep | Repeat |
+|---|---|
+| `bebop-back.jpg` | `build-bench.jpg` |
+| `bebop-side.jpg` | `lift-bench.jpg` |
+| `pit-work.jpg` | `pushback-build.jpg` |
+| `stadium-bench.jpg` | `stadium-tall.jpg` |
+| `plaques-sign.jpg` | `plaques-sign-2.jpg`, `trophy-design.jpg`, `trophy-judges.jpg` |
+
+## Loading effect
+- A moving shader (black, off-white, gold; no glow) covers each element that is still loading: photos, logos, headings, text blocks, cards, nav, and charts later (mark them `data-loading`).
+- One shared WebGL canvas, never one per element.
+- Each element reveals as soon as it is ready, with no added delay. Every effect clears within 2 seconds.
+- Runs on first load, after navigation and for lazy photos. Content stays in the pre-rendered HTML and shows normally if JavaScript or WebGL fails.
+- Still placeholder under `prefers-reduced-motion`. Release resources when done; no layout shift.
 
 ## Library roles (one job each)
 | Library | Job |
@@ -54,7 +82,7 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 | ECharts | Data charts with tooltips |
 
 - Before adding a React Bits component, list its dependencies. Prefer ones that do not add a second animation library; ask me if one is unavoidable.
-- No animated backgrounds, cursor effects, glitch text or tilt effects.
+- No animated backgrounds, cursor effects, glitch text or tilt effects. The temporary loading effect below is the one exception.
 - Honor `prefers-reduced-motion` in JavaScript and chart animations, not only CSS.
 - Content must be readable if animations never run.
 - Clean up Anime.js (`createScope()` and `revert()`) and ECharts instances on unmount. Resize charts with their container.

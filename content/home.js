@@ -15,7 +15,6 @@ export const home = {
     { src: p.lastMatch, alt: "Last match", tall: true, position: "30% 8%" },
     { src: p.eventTable, alt: "Pit table" },
     { src: p.pitWork, alt: "Working on the robot in the pit" },
-    { src: p.stadiumTall, alt: "Before the season opener" },
   ],
   buildLede: "CAD in Onshape and Fusion 360, built and tested in the Foothill lab.",
   build: [

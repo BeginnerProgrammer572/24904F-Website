@@ -1,6 +1,7 @@
 import { Big_Shoulders, IBM_Plex_Sans } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Nav from "@/components/layout/Nav";
+import { loadingFx } from "@/components/loading/fx";
 import { site } from "@/content/config";
 import "./globals.css";
 
@@ -22,6 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`} data-scroll-behavior="smooth">
+      <head>
+        {/* Inline so it can cover loading content before any bundle arrives. */}
+        <script dangerouslySetInnerHTML={{ __html: `(${loadingFx})()` }} />
+      </head>
       <body>
         <a className="skip" href="#content">Skip to content</a>
         <Nav />

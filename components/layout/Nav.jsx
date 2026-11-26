@@ -35,7 +35,7 @@ export default function Nav() {
     <header className={`nav${scrolled ? " solid" : ""}`}>
       <nav className="nav-in" aria-label="Main">
         <Link className="brand" href="/" aria-label={`${site.team} ${site.number}, home`}>
-          <Image src={photos.teamLogo} alt="" width={44} height={44} />
+          <Image src={photos.teamLogo} alt="" width={57} height={57} />
           <b>{site.team} <i>{site.number}</i></b>
         </Link>
         <div className="links">

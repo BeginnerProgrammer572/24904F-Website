@@ -20,6 +20,10 @@ const masonryItems = (items) =>
     alt: item.alt,
   }));
 
+// Sections with only a few photos get wider columns so no empty space is left.
+const COLUMN_WIDTH = { 2: 480, 3: 300 };
+const single = (items) => (items.length === 1 ? "mx-auto max-w-[480px]" : undefined);
+
 export default function MediaGallery({ sections }) {
   // Masonry renders nothing on the server, so the plain grid stands in until then.
   const mounted = useMounted();
@@ -27,28 +31,30 @@ export default function MediaGallery({ sections }) {
   return sections.map((section) => (
     <section className="blk" key={section.title}>
       <h2>{section.title}</h2>
-      {mounted ? (
-        <Masonry
-          items={masonryItems(section.items)}
-          columnWidth={240}
-          gap={12}
-          radius={0}
-          animateFrom="none"
-          revealOnScroll={false}
-          blurToFocus={false}
-          captions="none"
-          draggable={false}
-          hoverEffect="zoom"
-        />
-      ) : (
-        <div className="gal">
-          {section.items.map((item) => (
-            <figure key={item.src.src}>
-              <Image src={item.src} alt={item.alt} sizes={GRID_SIZES} style={{ objectPosition: item.position }} />
-            </figure>
-          ))}
-        </div>
-      )}
+      <div className={single(section.items)}>
+        {mounted ? (
+          <Masonry
+            items={masonryItems(section.items)}
+            columnWidth={COLUMN_WIDTH[section.items.length] ?? 240}
+            gap={12}
+            radius={0}
+            animateFrom="none"
+            revealOnScroll={false}
+            blurToFocus={false}
+            captions="none"
+            draggable={false}
+            hoverEffect="zoom"
+          />
+        ) : (
+          <div className="gal">
+            {section.items.map((item) => (
+              <figure key={item.src.src}>
+                <Image src={item.src} alt={item.alt} sizes={GRID_SIZES} style={{ objectPosition: item.position }} />
+              </figure>
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   ));
 }

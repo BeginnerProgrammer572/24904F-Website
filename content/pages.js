@@ -15,7 +15,7 @@ export const pages = {
     mascotLede: "Our team mascot, on every build.",
   },
   awards: { hero: { title: "Our", em: "Awards", photo: p.plaquesSign, position: "center 35%" } },
-  media: { hero: { title: "Trojan Horse", em: "24904F", photo: p.teamLogo, logo: true } },
+  media: { handle: "@foothill_robotics" },
   sponsors: {
     hero: { title: "Our", em: "Sponsors", photo: p.eventTable, position: "center 40%" },
     pitch: "Sponsor funds go to parts, event registration and travel for Foothill's competition teams. Reach out to learn more information.",

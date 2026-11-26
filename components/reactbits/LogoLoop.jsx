@@ -579,10 +579,8 @@ const createEngine = (root, track, config, setLayout) => {
         }
       }
     } else {
-      const tau = st.glide ? GLIDE_TAU : SMOOTH_TAU;
-      st.velocity += (target - st.velocity) * (1 - Math.exp(-dt / tau));
-      if (st.glide && Math.abs(st.velocity - target) < 2) st.glide = false;
-      if (Math.abs(st.velocity - target) < 0.01) st.velocity = target;
+      // Local change: one constant speed, with no easing up or down.
+      st.velocity = target;
       st.offset += st.velocity * dt;
       if (st.velocity !== 0 || target !== 0) busy = true;
     }
@@ -746,7 +744,7 @@ const createEngine = (root, track, config, setLayout) => {
   const onFocusIn = e => {
     const target = e.target;
     if (performance.now() - st.pressedAt < 800) return;
-    st.focused = true;
+    // Local change: focus does not pause the loop.
     const it = st.items.find(item => item.el.contains(target));
     if (it && st.geo) {
       const u = -st.offset - st.geo.lead + it.center - st.length / 2;

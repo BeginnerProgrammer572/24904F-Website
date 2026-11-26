@@ -15,7 +15,6 @@ export const media = [
       item(p.designAwardCart, "Design Award at RoBOOtics SPOOKtacular"),
       item(p.eventTable, "Pit table at a tournament"),
       item(p.pitWork, "Working on the robot in the pit"),
-      item(p.stadiumTall, "Early season, Cyberhawks Early Season Challenge"),
     ],
   },
   {
@@ -34,14 +33,12 @@ export const media = [
     title: "Design and build",
     items: [
       item(p.drivetrainCad, "Drivetrain in CAD"),
-      item(p.liftBench, "Lift test in the lab"),
-      item(p.buildBench, "Mid-build"),
       item(p.gears, "Gear train detail"),
     ],
   },
   {
     title: "Trophies",
-    items: [item(p.plaquesSign, "Award plaques"), item(p.plaquesSign2, "Judges, Design and Build Awards")],
+    items: [item(p.plaquesSign, "Award plaques")],
   },
   { title: "RoboSaurus", items: dinos.map((src) => item(src, "RoboSaurus")) },
 ];

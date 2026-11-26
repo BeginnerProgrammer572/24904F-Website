@@ -1,8 +1,4 @@
-"use client";
-
 import Image, { getImageProps } from "next/image";
-import { useState } from "react";
-import { useMotionAllowed } from "@/components/motion/hooks";
 import LogoLoop from "@/components/reactbits/LogoLoop";
 
 const loopItems = (sponsors) =>
@@ -11,13 +7,25 @@ const loopItems = (sponsors) =>
     return { src: props.src, srcSet: props.srcSet, alt: props.alt, width: s.logo.width, height: s.logo.height };
   });
 
+// Both versions are in the HTML and CSS shows exactly one: the loop, or a still
+// grid for reduced motion and no JavaScript (see globals.css).
 export default function SponsorLogos({ sponsors }) {
-  const moving = useMotionAllowed();
-  const [paused, setPaused] = useState(false);
-
-  // Static grid: server HTML, no JavaScript, and reduced motion.
-  if (!moving) {
-    return (
+  return (
+    <>
+      <div className="logo-band">
+        <LogoLoop
+          logos={loopItems(sponsors)}
+          speed={60}
+          // Keeps the widest logo (Wonderful Giving, 520x91) inside a 375 px screen.
+          logoHeight={56}
+          gap={64}
+          draggable={false}
+          intro={false}
+          fadeOut={false}
+          pauseOnHover={false}
+          ariaLabel="Sponsor logos"
+        />
+      </div>
       <ul className="logos">
         {sponsors.map((s) => (
           <li key={s.name}>
@@ -25,28 +33,6 @@ export default function SponsorLogos({ sponsors }) {
           </li>
         ))}
       </ul>
-    );
-  }
-
-  return (
-    <>
-      <div className="logo-band">
-        <LogoLoop
-          logos={loopItems(sponsors)}
-          speed={paused ? 0 : 60}
-          // Keeps the widest logo (Wonderful Giving, 520x91) inside a 375 px screen.
-          logoHeight={56}
-          gap={64}
-          draggable={false}
-          intro={false}
-          fadeOut={false}
-          pauseOnHover
-          ariaLabel="Sponsor logos"
-        />
-      </div>
-      <button type="button" className="btn alt mt-3" aria-pressed={paused} onClick={() => setPaused((p) => !p)}>
-        Pause logos
-      </button>
     </>
   );
 }

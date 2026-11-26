@@ -5,10 +5,11 @@ import Reveals from "@/components/motion/Reveals";
 // The wrapper matters: Next skips sticky elements when it scrolls to a new page,
 // so the first child of a page must not be the sticky hero itself.
 export default function Page({ hero, children }) {
-  const { title, em, sub, chips, photo, position = "center 30%", logo, tall } = hero;
+  // `row` centres the title as one line, for a header with no photo.
+  const { title, em, sub, chips, photo, position = "center 30%", row, tall } = hero;
   return (
     <div>
-      <div className={`hero ${tall ? "tall" : "short"}${logo ? " logo" : ""}`}>
+      <div className={`hero ${tall ? "tall" : "short"}${row ? " row" : ""}`}>
         {photo && (
           <div className="hero-img">
             <Image
@@ -16,8 +17,8 @@ export default function Page({ hero, children }) {
               alt=""
               fill
               preload
-              sizes={logo ? "400px" : "100vw"}
-              style={{ objectPosition: logo ? "center" : position }}
+              sizes="100vw"
+              style={{ objectPosition: position }}
             />
           </div>
         )}
