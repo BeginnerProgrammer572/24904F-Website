@@ -17,7 +17,7 @@ export const seasons = [
     ],
     robot: {
       name: "Bebop",
-      desc: "A redesign is underway this season, with full CAD planned through late November and the build right after.",
+      desc: "A redesign is underway this season, with full CAD planned through late November and the build right after. This is the first year the team has used sensors and PID.",
       specs: [
         ["Drivetrain", "6 motors, 55 W (the rule cap)"],
         ["Lift", "Double reverse four-bar, 2 motors (22 W)"],
@@ -26,6 +26,7 @@ export const seasons = [
         ["Other", "Toggle mechanism, front mesh"],
         ["Code", "C++ on PROS with EZ-Template"],
         ["CAD", "Onshape and Fusion 360"],
+        ["First year using", "Sensors and PID"],
       ],
     },
     results: [
@@ -73,7 +74,8 @@ export const seasons = [
     level: "10th grade · 2nd season",
     // The header only; the home page card for this season stays without a photo.
     header: p.pbState2,
-    position: "center 45%",
+    // Show the whole photo, uncropped.
+    headerFit: true,
     blurb: "A Build Award and a quarterfinal run at State, reached through a skills-only Last Chance tournament.",
     stats: [
       { v: "Build", k: "Award at State" },
@@ -94,9 +96,15 @@ export const seasons = [
         ["First year using", "Polycarbonate, pistons, flex wheels"],
       ],
     },
-    // Photo subsections. pb-state-2 is this page's header, so it is not repeated here.
+    // pb-state-2 is also the header: an approved repeat on this page only.
     galleries: [
-      { title: "State robot", items: [{ src: p.pbState1, alt: "State robot" }] },
+      {
+        title: "State robot",
+        items: [
+          { src: p.pbState1, alt: "State robot" },
+          { src: p.pbState2, alt: "State robot, top view" },
+        ],
+      },
       {
         title: "League playoffs robot",
         items: [

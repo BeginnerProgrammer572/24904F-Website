@@ -33,6 +33,7 @@ export default async function SeasonPage({ params }) {
         chips: season.stats,
         photo: season.header ?? season.photo,
         position: season.position,
+        fit: season.headerFit,
       }}
     >
       <section className="blk">
@@ -61,7 +62,7 @@ export default async function SeasonPage({ params }) {
           {season.galleries.map((g) => (
             <div className="sub-gallery" key={g.title}>
               <h3>{g.title}</h3>
-              <PhotoGrid items={g.items} className={g.items.length === 1 ? "single" : ""} />
+              <PhotoGrid items={g.items} className={g.items.length <= 2 ? "few" : ""} />
               {g.video && <SeasonVideo {...g.video} />}
             </div>
           ))}

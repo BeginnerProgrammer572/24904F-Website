@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { home } from "@/content/home";
 import { media, robosaurus, trophies } from "@/content/media";
 import { pages } from "@/content/pages";
+import { photos as p } from "@/content/photos";
 import { sameShot } from "@/content/sameShot";
 import { seasons } from "@/content/seasons";
 import { sponsors } from "@/content/sponsors";
@@ -27,8 +28,9 @@ const routes = {
   "/sponsors": [pages.sponsors.hero.photo, ...sponsors.map((s) => s.logo)],
 };
 
-describe.each(Object.entries(routes))("%s", (_, list) => {
-  const shown = list.filter(Boolean);
+describe.each(Object.entries(routes))("%s", (route, list) => {
+  // One approved exception: on 25-26, pb-state-2 is the header and in the gallery.
+  const shown = list.filter(Boolean).filter((src, i, all) => !(route === "/seasons/25-26" && src === p.pbState2 && all.indexOf(src) !== i));
 
   it("shows no photo twice", () => {
     expect(shown).toEqual([...new Set(shown)]);

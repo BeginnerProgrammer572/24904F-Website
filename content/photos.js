@@ -6,6 +6,7 @@ import buildBench from "@/assets/photos/build-bench.jpg";
 import designAwardCart from "@/assets/photos/design-award-cart.jpg";
 import drivetrainCad from "@/assets/photos/drivetrain-cad.jpg";
 import eventTable from "@/assets/photos/event-table.jpg";
+import instagramGlyph from "@/assets/photos/instagram-glyph.png";
 import labField from "@/assets/photos/lab-field.jpg";
 import lastMatch from "@/assets/photos/last-match.jpg";
 import liftBench from "@/assets/photos/lift-bench.jpg";
@@ -43,6 +44,7 @@ export const photos = {
   designAwardCart,
   drivetrainCad,
   eventTable,
+  instagramGlyph,
   labField,
   lastMatch,
   liftBench,

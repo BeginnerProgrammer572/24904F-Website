@@ -1,6 +1,5 @@
 import { Rye } from "next/font/google";
 import Image from "next/image";
-import { siInstagram } from "simple-icons";
 import { External } from "@/components/content/blocks";
 import MediaGallery from "@/components/content/MediaGallery";
 import Page from "@/components/layout/Page";
@@ -17,10 +16,8 @@ const rye = Rye({ subsets: ["latin"], weight: "400" });
 export default function Media() {
   const title = (
     <>
-      {/* Instagram's own glyph (simple-icons), unaltered, in the text colour. */}
-      <svg className="handle-glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d={siInstagram.path} />
-      </svg>
+      {/* Instagram's glyph in its own colours; the link beside it carries the name. */}
+      <Image className="handle-glyph" src={photos.instagramGlyph} alt="" sizes="80px" loading="eager" />
       <External href={config.instagram}>{pages.media.handle}</External>
     </>
   );

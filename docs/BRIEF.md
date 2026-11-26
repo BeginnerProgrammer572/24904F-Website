@@ -51,7 +51,7 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Small gold text on light backgrounds uses `#756938` for contrast; `#b2a371` stays on dark backgrounds.
 - Header photos use a darker flat overlay, and shorter headers add a flat full-width shade behind the title.
 - Media header, number: `24904` in Rye (`next/font/google`, this page only) in gold, followed by `assets/photos/trojan-horse.png` standing in for the F, used as is. The horse matches the digit height and baseline, with digit-like spacing. Digits and horse are centred and scale as one unit, and screen readers read "24904F". It is as large as fits (24 px side margins).
-- Media header, row: Instagram's glyph (from `simple-icons`, unaltered, one white colour, 0.9em, vertically centred) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/, on one row at 375 px. The row keeps a 1.5em height. The nav keeps the team logo.
+- Media header, row: Instagram's glyph (`assets/photos/instagram-glyph.png`, original colours, unaltered, 0.9em, vertically centred) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/, on one row at 375 px. The row keeps a 1.5em height. The nav keeps the team logo.
 - Media header, spacing: three equal gaps (nav to number, number to logo row, logo row to the content panel).
 
 ## Sponsor logo loop
@@ -73,7 +73,10 @@ Added from the updated `reference/index.html` 2025-26 entry, which is the source
 | `pb-tournament-front.jpg` | League playoffs robot, front | Competition |
 | `pb-bench-front.jpg` | League playoffs robot on the bench | Robots |
 
-- On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card). The Photos section has two subsections: "State robot" (`pb-state-1.jpg`) and "League playoffs robot" (drivetrain, tournament angle, tournament front, bench front, then the video). `pb-state-2.jpg` still appears on Media.
+- On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card), shown whole: never cropped or enlarged, shrunk to fit the screen, on black, with the title beside it on wide screens and above it otherwise. This header does not stick.
+- The Photos section has two subsections: "State robot" (`pb-state-1.jpg`, `pb-state-2.jpg`) and "League playoffs robot" (drivetrain, tournament angle, tournament front, bench front, then the video).
+- **Approved exception to the one-photo-per-page rule, this page only:** `pb-state-2.jpg` is both the header and in "State robot".
+- The 26-27 robot has a "First year using: Sensors and PID" spec row and the sentence "This is the first year the team has used sensors and PID."
 - The robot description's last sentence reads "The league playoffs robot is shown further down, under its own heading." (changed from "...further down the photos." in `reference/index.html`).
 - Video: `public/video/pb-driver-view.mp4` (poster `pb-driver-view-poster.jpg`), below the photos on the 25-26 page only: controls, muted, playsinline, preload metadata, no autoplay. The Media gallery shows images only, so the video is not there.
 
