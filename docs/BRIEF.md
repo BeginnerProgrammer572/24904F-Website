@@ -32,7 +32,7 @@ This is the personal website for VEX V5 team 24904F, Foothill High School, Baker
 | `/software` | Autonomous planner (coming later), CAD, robot code, PID/tracking wheels/encoders, PID chart |
 | `/team` | Mission, students, coaches, RoboSaurus |
 | `/awards` | Awards by season. The header photo is the trophy case; there is no separate Trophy Case section |
-| `/media` | Header with `24904F` above a row of the team logo and `@foothill_robotics`, then the gallery with full-screen viewer. A QR code will point here, so keep this path stable |
+| `/media` | Header with `24904` and the horse above a row of the team logo and `@foothill_robotics`, then the gallery with full-screen viewer. A QR code will point here, so keep this path stable |
 | `/sponsors` | Logos, how to sponsor, coach contacts |
 
 Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new routes on the client.
@@ -47,7 +47,12 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Button label for sponsorship: `SPONSOR US`.
 - No shadows or glows anywhere, including inside React Bits components. Header photos keep a flat dark overlay for contrast. Keyboard focus is a solid outline.
 - The nav team logo is 57 px (30% larger than the original 44 px) on all screens, in proportion.
-- The Media header has `24904F` centred in the heading font, with comfortable space, above one centred row (the group sits low in the header, clear of the nav): the team logo (on a square white block, not redrawn or recoloured) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/. It fits one row at 375 px.
+- Headings use the `Big Shoulders` family at optical size 72, which is its Display cut.
+- Small gold text on light backgrounds uses `#756938` for contrast; `#b2a371` stays on dark backgrounds.
+- Header photos use a darker flat overlay, and shorter headers add a flat full-width shade behind the title.
+- Media header, number: `24904` in Rye (`next/font/google`, this page only) in gold, followed by `assets/photos/trojan-horse.png` standing in for the F, used as is. The horse matches the digit height and baseline, with digit-like spacing. Digits and horse are centred and scale as one unit, and screen readers read "24904F". It is as large as fits (24 px side margins).
+- Media header, row: the team logo (on a square white block, not redrawn or recoloured) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/, on one row at 375 px.
+- Media header, spacing: three equal gaps (nav to number, number to logo row, logo row to the content panel).
 
 ## Sponsor logo loop
 - The section heading is `THANK YOU TO OUR SPONSORS!`, centred above the logos (it replaces `Sponsors`).
@@ -57,7 +62,9 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Under `prefers-reduced-motion` (and without JavaScript), a still grid of all logos replaces the loop. Never show both.
 
 ## Excluded photo
-`gears.jpg` (the gear-train close-up, "Gear train detail") is removed from the whole site. Do not re-add it from `reference/`. It is on the skip list in `scripts/prepare-photos.mjs`.
+`gears.jpg` (the gear-train close-up, "Gear train detail") is removed from the whole site. Do not re-add it from `reference/`. The skip list in `scripts/prepare-photos.mjs` holds it, along with `pushback-build.jpg` (a repeat shot) and `media-qr.png` (the old QR code).
+
+Media sections with a single photo (Design and build, Trophies) show it centred, 480 px wide at most.
 
 ## One photo per page
 Each photo appears at most once per page, counting headers, cards, galleries, sliders and backgrounds. The full-screen viewer, the nav logo, the Media header logo and the loop's hidden copies do not count. When a header or card uses a shot, keep that placement. Do not delete image files or substitute other photos.
@@ -82,8 +89,8 @@ Same shot (keep the left one). The list lives in `content/sameShot.js`:
 ## Library roles (one job each)
 | Library | Job |
 |---|---|
-| React Bits | Count-up stats, scroll reveals, sponsor logo loop, media grid |
-| Anime.js | Season results timeline drawing on scroll, staggered results, one hero entrance |
+| React Bits | Sponsor logo loop, media grid |
+| Anime.js | Count-up stats, scroll reveals, season results timeline drawing on scroll, staggered results, one hero entrance |
 | ECharts | Data charts with tooltips |
 
 - Before adding a React Bits component, list its dependencies. Prefer ones that do not add a second animation library; ask me if one is unavoidable.
@@ -92,12 +99,14 @@ Same shot (keep the left one). The list lives in `content/sameShot.js`:
 - Content must be readable if animations never run.
 - Clean up Anime.js (`createScope()` and `revert()`) and ECharts instances on unmount. Resize charts with their container.
 - Load ECharts only on pages that show a chart.
+- Count-up and reveals use Anime.js because the React Bits versions add `motion` and `gsap`.
+- Vendored React Bits files (`components/reactbits/**`) are excluded from lint; local changes are listed in their README.
 
 ## Charts
 1. **PID response (Software page):** target vs. actual over time, with a before/after tuning toggle. Input: `content/data/pid-runs.csv` with columns `run,time_ms,target_deg,actual_deg`.
 2. **Match scores (season page):** Input: `content/data/matches.csv` with columns `season,date,event,match,our_score,opponent_score`.
 
-Build the CSV loaders and chart components, but hide each chart until its file has real data. Sample data is allowed in tests only. Give each chart a short text summary for screen readers.
+Build the CSV loaders and chart components, but hide each chart until its file has real data. Sample data is allowed only in tests and a development-only preview. Give each chart a short text summary for screen readers.
 
 ## Content rules
 - Credit "Designed and built by Bryan Sobalvarro" on every page.

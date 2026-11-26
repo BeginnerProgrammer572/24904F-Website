@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CountUp from "@/components/motion/CountUp";
+import HeroEntrance from "@/components/motion/HeroEntrance";
 import Reveals from "@/components/motion/Reveals";
 
 // The wrapper matters: Next skips sticky elements when it scrolls to a new page,
@@ -22,7 +23,7 @@ export default function Page({ hero, children }) {
             />
           </div>
         )}
-        <div className="hero-in">
+        <HeroEntrance className="hero-in">
           {above && <p className="above">{above}</p>}
           <h1>
             {title}
@@ -39,7 +40,7 @@ export default function Page({ hero, children }) {
               ))}
             </dl>
           )}
-        </div>
+        </HeroEntrance>
       </div>
       <main className="sheet" id="content">
         <Reveals className="sheet-in">{children}</Reveals>

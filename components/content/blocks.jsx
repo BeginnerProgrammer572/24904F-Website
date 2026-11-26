@@ -64,20 +64,6 @@ export function SpecTable({ specs }) {
   );
 }
 
-export function Timeline({ results }) {
-  return (
-    <ul className="tl">
-      {results.map((r) => (
-        <li key={r.what} className={r.win ? "win" : undefined}>
-          <div className="when">{r.when}</div>
-          <div className="what">{r.what}</div>
-          {r.detail && <div className="det">{r.detail}</div>}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 const shortDate = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
 
 export function Calendar({ events }) {

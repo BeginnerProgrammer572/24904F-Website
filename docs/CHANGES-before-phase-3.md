@@ -65,3 +65,10 @@ Files with different names can show the same shot. Known matches:
 - A search of the code finds no shadow or glow styles in use.
 - The loading shader works on slow network throttling and fails safely.
 - Logo and Media header changes pass at all three widths.
+
+## Later approved changes
+These came after this file and replace it where they differ. `docs/BRIEF.md` describes the current site.
+
+- Sponsors: the heading `THANK YOU TO OUR SPONSORS!`, and logos 20% larger.
+- Media header (replaces item 6): `24904` in Rye and the horse image above the logo and handle row, with equal vertical spacing.
+- `gears.jpg` removed from the site.

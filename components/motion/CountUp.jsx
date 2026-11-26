@@ -19,7 +19,8 @@ export default function CountUp({ value }) {
       const counter = { n: 0 };
       const show = () => (el.textContent = String(Math.round(counter.n)));
       show();
-      animate(counter, { n: Number(value), duration: 900, ease: "outQuad", onUpdate: show });
+      // Starts as the hero entrance brings the chips in.
+      animate(counter, { n: Number(value), delay: 500, duration: 900, ease: "outQuad", onUpdate: show });
       return () => (el.textContent = final);
     });
     return () => scope.revert();

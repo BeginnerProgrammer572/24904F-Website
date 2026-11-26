@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
-import { Calendar, SpecTable, Timeline } from "@/components/content/blocks";
+import { Calendar, SpecTable } from "@/components/content/blocks";
 import PhotoSlider from "@/components/content/PhotoSlider";
 import Page from "@/components/layout/Page";
+import SeasonTimeline from "@/components/motion/SeasonTimeline";
 import { getSeason, seasons } from "@/content/seasons";
 
 export const dynamicParams = false;
@@ -40,7 +41,7 @@ export default async function SeasonPage({ params }) {
           </div>
           <div className="card">
             <h2>Results</h2>
-            <Timeline results={season.results} />
+            <SeasonTimeline results={season.results} />
           </div>
         </div>
       </section>

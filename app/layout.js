@@ -2,6 +2,7 @@ import { Big_Shoulders, IBM_Plex_Sans } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Nav from "@/components/layout/Nav";
 import { loadingFx } from "@/components/loading/fx";
+import { heroWait } from "@/components/motion/heroWait";
 import { site } from "@/content/config";
 import "./globals.css";
 
@@ -22,10 +23,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`} data-scroll-behavior="smooth">
+    // The head script adds data-hero-wait before React starts. This silences that one
+    // expected difference; it covers <html>'s own attributes, not anything inside it.
+    <html lang="en" className={`${display.variable} ${body.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* Inline so it can cover loading content before any bundle arrives. */}
-        <script dangerouslySetInnerHTML={{ __html: `(${loadingFx})()` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(${loadingFx})();(${heroWait})()` }} />
       </head>
       <body>
         <a className="skip" href="#content">Skip to content</a>

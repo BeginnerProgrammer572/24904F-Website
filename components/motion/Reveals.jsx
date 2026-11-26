@@ -16,7 +16,8 @@ export default function Reveals({ children, className }) {
       if (self.matches.reduce) return;
       const host = root.current;
       const all = [...host.querySelectorAll(".blk")].filter(
-        (el) => el.getBoundingClientRect().top > window.innerHeight,
+        // The timeline section has its own animation.
+        (el) => !el.querySelector("[data-timeline]") && el.getBoundingClientRect().top > window.innerHeight,
       );
       const waiting = new Set(all);
       // A leftover transform would trap fixed children such as the photo viewer.
