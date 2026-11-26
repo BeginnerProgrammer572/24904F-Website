@@ -3,7 +3,7 @@
 ## Instructions for the agent
 1. Read this brief and everything in `reference/`.
 2. Produce an implementation plan: file structure, dependencies, phases, risks, open questions. **Write no code until I approve the plan.**
-3. Build one phase at a time. After each phase, run lint, type check and `next build`, show screenshots at 375, 768 and 1440 px, then stop for my review.
+3. Build one phase at a time. After each phase, run lint and `next build`, show screenshots at 375, 768 and 1440 px, then stop for my review.
 4. Never invent results, stats, quotes, match data or photos. If something is missing, ask.
 5. Check current official docs before using any library API. Do not rely on memory.
 
@@ -17,12 +17,12 @@ This is the personal website for VEX V5 team 24904F, Foothill High School, Baker
 - `reference/images/`: the only photos and logos to use.
 
 ## Stack
-- Next.js (App Router), TypeScript, Tailwind CSS
-- Static export (`output: 'export'`), with `images.unoptimized: true` or a custom image loader. No server features, database or CMS. Keep it host-independent.
-- React Bits (reactbits.dev), free components only, TypeScript + Tailwind variants
+- Next.js (App Router), JavaScript (`.js`/`.jsx`, no TypeScript), Tailwind CSS
+- Hosted on Vercel, deployed from the GitHub repo. Use the standard Next.js build (no `output: 'export'`) and `next/image` for photos. Pre-render pages statically. No database or CMS.
+- React Bits (reactbits.dev), free components only, JavaScript + Tailwind variants
 - Anime.js v4
 - Apache ECharts, modular imports from `echarts/core`
-- All content in typed files under `content/`, so adding a season means adding one object
+- All content in plain JavaScript files under `content/`, so adding a season means adding one object
 
 ## Routes
 | Route | Content |
@@ -81,16 +81,16 @@ Build the CSV loaders and chart components, but hide each chart until its file h
 - Resize and compress photos at build time or before committing
 - Lighthouse mobile targets: performance 85+, accessibility 95+
 - Page titles, descriptions and social preview image
-- Google Analytics 4 behind `NEXT_PUBLIC_GA_ID` (off when empty): page views, plus click events for sponsor, email and Instagram links
+- Google Analytics 4 behind `NEXT_PUBLIC_GA_ID`, set in Vercel's environment variables (off when empty): page views, plus click events for sponsor, email and Instagram links
 
 ## Phases
 | Phase | Work | Done when |
 |---|---|---|
-| 1 | Scaffold, content files, routes, visual match, hash redirects | All current content appears and static build passes |
+| 1 | Scaffold, content files, routes, visual match, hash redirects | All current content appears and the build passes |
 | 2 | React Bits components | Reduced-motion and mobile checks pass |
 | 3 | Anime.js motion | No leaked or repeated animations when navigating |
 | 4 | ECharts and CSV loaders | Charts work with test data and stay hidden without real data |
-| 5 | Accessibility, performance, SEO, analytics, README | Quality bar met; README explains editing content and deploying |
+| 5 | Accessibility, performance, SEO, analytics, README | Quality bar met; README explains editing content and deploying on Vercel |
 
 ## Out of scope
 The autonomous planner, the Foothill Robotics recruitment page, the standalone sponsor page, and any second team's pages.
