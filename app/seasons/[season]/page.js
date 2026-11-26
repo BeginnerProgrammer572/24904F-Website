@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { MatchSection } from "@/components/charts/ChartSections";
+import { loadMatches } from "@/lib/chartData";
 import { Calendar, SpecTable } from "@/components/content/blocks";
 import PhotoSlider from "@/components/content/PhotoSlider";
 import Page from "@/components/layout/Page";
@@ -45,6 +47,7 @@ export default async function SeasonPage({ params }) {
           </div>
         </div>
       </section>
+      <MatchSection matches={loadMatches(season.id)} />
       {season.events.length > 0 && (
         <section className="blk">
           <h2>Season Calendar</h2>

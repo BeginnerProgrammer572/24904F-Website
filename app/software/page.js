@@ -1,4 +1,6 @@
+import { PidSection } from "@/components/charts/ChartSections";
 import { External, SponsorButton } from "@/components/content/blocks";
+import { loadPidRuns } from "@/lib/chartData";
 import Page from "@/components/layout/Page";
 import { config } from "@/content/config";
 import { pages } from "@/content/pages";
@@ -22,6 +24,7 @@ export default function Software() {
           ))}
         </div>
       </section>
+      <PidSection runs={loadPidRuns()} />
       <section className="blk">
         <h2>Team pages</h2>
         <SponsorButton />
