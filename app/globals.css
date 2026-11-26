@@ -81,11 +81,16 @@
   /* This box keeps the logo row where it is; the larger text inside overflows upward. */
   .hero.row .above { position: relative; height: var(--f); margin: 0 0 .4em; font: 900 var(--f)/1 var(--font-display); color: var(--color-gold); }
   .hero.row .above span {
-    /* 4x, limited by 24 px side margins and 24 px of space under the 77 px nav.
-       "24904F" is about 3.02em wide with glyphs 0.835em tall. */
-    --size: min(var(--f) * 4, (100vw - 48px) / 3.02, (var(--baseline) - 101px) / 0.835);
-    position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap;
-    bottom: calc(var(--f) * 0.1 - var(--size) * 0.1); font-size: var(--size); line-height: 1;
+    /* The text is in Rye (set in app/media/page.js). --base is the size it had in the
+       heading font: 4x, limited by 24 px side margins and 24 px under the 77 px nav.
+       Rye is wider (4.12em against 3.02em), so 0.833 of that keeps the same area,
+       again limited by the side margins. */
+    --base: min(var(--f) * 4, (100vw - 48px) / 3.02, (var(--baseline) - 101px) / 0.835);
+    --size: min(var(--base) * 0.833, (100vw - 48px) / 4.12);
+    /* The extra 0.028em centres Rye's glyphs, which sit right of their box's middle. */
+    position: absolute; left: 50%; transform: translateX(calc(-50% - 0.028em)); white-space: nowrap;
+    /* Rye's baseline sits 0.139em above the bottom of its box. */
+    bottom: calc(var(--f) * 0.1 - var(--size) * 0.139); font-size: var(--size); line-height: 1;
   }
   .hero.row h1 { display: flex; align-items: center; justify-content: center; gap: .3em; white-space: nowrap; text-transform: none; font-size: var(--f); line-height: 1; }
   .handle-logo { flex: none; display: block; width: 1.5em; height: 1.5em; padding: .1em; background: #fff; }

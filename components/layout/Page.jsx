@@ -6,7 +6,7 @@ import Reveals from "@/components/motion/Reveals";
 // so the first child of a page must not be the sticky hero itself.
 export default function Page({ hero, children }) {
   // `row` centres the title as one line, for a header with no photo; `above` is a line over it.
-  const { title, em, sub, chips, photo, position = "center 30%", row, above, tall } = hero;
+  const { title, em, sub, chips, photo, position = "center 30%", row, above, aboveClass, tall } = hero;
   return (
     <div>
       <div className={`hero ${tall ? "tall" : "short"}${row ? " row" : ""}`}>
@@ -23,7 +23,7 @@ export default function Page({ hero, children }) {
           </div>
         )}
         <div className="hero-in">
-          {above && <p className="above"><span>{above}</span></p>}
+          {above && <p className="above"><span className={aboveClass}>{above}</span></p>}
           <h1>
             {title}
             {em && <> <em>{em}</em></>}
