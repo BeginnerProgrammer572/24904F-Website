@@ -54,6 +54,12 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Media header, row: Instagram's glyph (`assets/photos/instagram-glyph.png`, original colours, unaltered, 0.9em, vertically centred) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/, on one row at 375 px. The row keeps a 1.5em height. The nav keeps the team logo.
 - Media header, spacing: three equal gaps (nav to number, number to logo row, logo row to the content panel).
 
+## Media page: current season only
+- The Media page shows only the current season's photos, plus the RoboSaurus section. This rule moves to the new season each year: when a season starts, the previous season's photos leave the Media page.
+- A photo's season comes from its caption and the season entries in `content/`, not its file name (`pushback-robot.jpg` is "Our first Override design").
+- **Approved exception:** `plaques-sign.jpg` stays in Trophies, because it shows all three awards (Design Award 26-27, Build Award 25-26, High Stakes Judges' Award 24-25). `trophy-design.jpg` and `trophy-judges.jpg` are not added.
+- This changes only the Media page. Season pages, the home page and the Awards page keep their photos, and no image files are deleted. A category with no photos loses its heading.
+
 ## Sponsor logo loop
 - The section heading is `THANK YOU TO OUR SPONSORS!`, centred above the logos (it replaces `Sponsors`).
 - Loop logos are 67.2 px tall (20% larger than before) in a 133 px strip, never wider than the strip. Still-grid logos are also 20% larger where their tile allows; tiles do not change size.
@@ -64,14 +70,16 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 ## Push Back (25-26) media
 Added from the updated `reference/index.html` 2025-26 entry, which is the source for the robot description, specs, order and captions. Originals are kept in `reference/images/` (not committed or built).
 
-| File | Caption | Media page category |
-|---|---|---|
-| `pb-state-1.jpg` | State robot | Robots |
-| `pb-state-2.jpg` | State robot, top view | Robots |
-| `pb-drivetrain.jpg` | League playoffs robot drivetrain | Robots |
-| `pb-tournament-angle.jpg` | League playoffs robot | Competition |
-| `pb-tournament-front.jpg` | League playoffs robot, front | Competition |
-| `pb-bench-front.jpg` | League playoffs robot on the bench | Robots |
+| File | Caption |
+|---|---|
+| `pb-state-1.jpg` | State robot |
+| `pb-state-2.jpg` | State robot, top view |
+| `pb-drivetrain.jpg` | League playoffs robot drivetrain |
+| `pb-tournament-angle.jpg` | League playoffs robot |
+| `pb-tournament-front.jpg` | League playoffs robot, front |
+| `pb-bench-front.jpg` | League playoffs robot on the bench |
+
+These are on the 25-26 page only; they are no longer on the Media page (see "Media page: current season only").
 
 - On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card). It is a cover-style header with no empty bars, made taller than other season headers (the whole photo's height at full width, at most the screen height) so less is cropped, favouring the lower left (`30% 70%`). On phones it is at least 640 px tall (or the screen height), trimming the sides so the robot shows above the title.
 - The 25-26 code is listed as "C++" (not "C++ on PROS"), and the description says "The code was written in C++." instead of saying the team moved to PROS that year (this differs from `reference/index.html`).
