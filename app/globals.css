@@ -98,7 +98,8 @@
   /* A tall header photo (about 0.83 wide to 1 high): as tall as the whole photo at
      full width (121vw), but no taller than the screen. Cover still fills it, so
      there are no bars; a taller box simply crops less. */
-  .hero.short.portrait { min-height: min(100svh, 121.14vw); padding-top: 122px; }
+  /* Phones get at least 640 px, trimming the sides, so the robot shows above the title. */
+  .hero.short.portrait { min-height: min(100svh, max(121.14vw, 640px)); padding-top: 122px; }
   .sub-gallery + .sub-gallery { margin-top: 28px; }
   .hero.row a:hover { color: var(--color-gold); }
   .hero-in { position: relative; z-index: 2; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 20px 56px; }
