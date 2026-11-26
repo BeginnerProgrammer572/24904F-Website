@@ -63,35 +63,29 @@
   /* Flat overlay: the top is dark enough for the nav, the bottom for the title. */
   .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgb(0 0 0 / .7) 0%, rgb(0 0 0 / .58) 12%, rgb(0 0 0 / .15) 35%, rgb(0 0 0 / .35) 60%, rgb(0 0 0 / .85) 100%); }
   /* Media header: the logo and handle on one centred row, no photo. */
-  .hero.row { background: #111; align-items: center; }
-  .hero.row::before { background: none; }
   .hero.row {
-    padding-top: 190px;
+    background: #111;
     --f: clamp(28px, 8vw, 80px);
-    --lift: 0px;
-    /* Where the line above the row has its baseline, measured from the top of the header. */
-    --baseline: calc(190px + max(0px, 72vh - 190px - var(--f) * 2.9) / 2 + var(--f) * 0.9 - var(--lift));
+    /* The header keeps the height it had when its content set it. */
+    --h: max(72vh, calc(190px + var(--f) * 2.9));
+    padding: 0; min-height: var(--h);
   }
-  .hero.row .hero-in { padding-bottom: 0; top: calc(-1 * var(--lift)); }
-  /* Short windows: raise the text just enough to keep the logo row 16 px above the
-     content panel, which overlaps the header by 22 px. The header height is unchanged. */
-  @media (max-height: 649px) {
-    .hero.row { --lift: max(0px, 38px - max(0px, 72vh - 190px - var(--f) * 2.9) / 2); }
+  .hero.row::before { background: none; }
+  /* Between the 77 px nav and the content panel (which overlaps by 22 px), the number
+     and the logo row are spread so that all three gaps are equal. */
+  .hero.row .hero-in { position: absolute; top: 77px; bottom: 22px; left: 0; right: 0; display: flex; flex-direction: column; justify-content: space-evenly; padding-bottom: 0; }
+  .hero.row .above {
+    /* Largest size that fits: 4x the old heading text at the same area, 24 px side
+       margins (the number is 4.11em wide), and gaps of at least 24 px. */
+    --size: min(var(--f) * 3.332, (100vw - 48px) / 4.12, (var(--h) - 99px - var(--f) * 1.5 - 72px) / 0.781);
+    margin: 0; height: 0.781em; font-size: var(--size); line-height: 1; color: var(--color-gold);
   }
-  /* This box keeps the logo row where it is; the larger text inside overflows upward. */
-  .hero.row .above { position: relative; height: var(--f); margin: 0 0 .4em; font: 900 var(--f)/1 var(--font-display); color: var(--color-gold); }
-  .hero.row .above span {
-    /* The text is in Rye (set in app/media/page.js). --base is the size it had in the
-       heading font: 4x, limited by 24 px side margins and 24 px under the 77 px nav.
-       Rye is wider (4.12em against 3.02em), so 0.833 of that keeps the same area,
-       again limited by the side margins. */
-    --base: min(var(--f) * 4, (100vw - 48px) / 3.02, (var(--baseline) - 101px) / 0.835);
-    --size: min(var(--base) * 0.833, (100vw - 48px) / 4.12);
-    /* The extra 0.028em centres Rye's glyphs, which sit right of their box's middle. */
-    position: absolute; left: 50%; transform: translateX(calc(-50% - 0.028em)); white-space: nowrap;
-    /* Rye's baseline sits 0.139em above the bottom of its box. */
-    bottom: calc(var(--f) * 0.1 - var(--size) * 0.139); font-size: var(--size); line-height: 1;
-  }
+  /* Digits and horse as one centred unit; the box runs from cap top to baseline. */
+  .number { display: flex; justify-content: center; align-items: flex-end; height: 0.781em; white-space: nowrap; }
+  /* Rye: the baseline is 0.139em above the box bottom; the first digit starts 0.0625em in. */
+  .number .digits { margin: 0 0 -0.139em -0.0625em; }
+  /* As tall as the digits, 0.025em after the last one (their own spacing). */
+  .number img { height: 0.781em; width: auto; margin-left: 0.002em; }
   .hero.row h1 { display: flex; align-items: center; justify-content: center; gap: .3em; white-space: nowrap; text-transform: none; font-size: var(--f); line-height: 1; }
   .handle-logo { flex: none; display: block; width: 1.5em; height: 1.5em; padding: .1em; background: #fff; }
   .handle-logo img { width: 100%; height: 100%; object-fit: contain; }

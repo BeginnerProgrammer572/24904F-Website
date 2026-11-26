@@ -56,6 +56,9 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Seamless at any screen width.
 - Under `prefers-reduced-motion` (and without JavaScript), a still grid of all logos replaces the loop. Never show both.
 
+## Excluded photo
+`gears.jpg` (the gear-train close-up, "Gear train detail") is removed from the whole site. Do not re-add it from `reference/`. It is on the skip list in `scripts/prepare-photos.mjs`.
+
 ## One photo per page
 Each photo appears at most once per page, counting headers, cards, galleries, sliders and backgrounds. The full-screen viewer, the nav logo, the Media header logo and the loop's hidden copies do not count. When a header or card uses a shot, keep that placement. Do not delete image files or substitute other photos.
 

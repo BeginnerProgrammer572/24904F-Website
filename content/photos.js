@@ -6,7 +6,6 @@ import buildBench from "@/assets/photos/build-bench.jpg";
 import designAwardCart from "@/assets/photos/design-award-cart.jpg";
 import drivetrainCad from "@/assets/photos/drivetrain-cad.jpg";
 import eventTable from "@/assets/photos/event-table.jpg";
-import gears from "@/assets/photos/gears.jpg";
 import labField from "@/assets/photos/lab-field.jpg";
 import lastMatch from "@/assets/photos/last-match.jpg";
 import liftBench from "@/assets/photos/lift-bench.jpg";
@@ -26,6 +25,7 @@ import stadiumBench from "@/assets/photos/stadium-bench.jpg";
 import stadiumTall from "@/assets/photos/stadium-tall.jpg";
 import teamLogo from "@/assets/photos/team-logo.jpg";
 import teamPhoto from "@/assets/photos/team-photo.jpg";
+import trojanHorse from "@/assets/photos/trojan-horse.png";
 import trophyDesign from "@/assets/photos/trophy-design.jpg";
 import trophyJudges from "@/assets/photos/trophy-judges.jpg";
 
@@ -37,7 +37,6 @@ export const photos = {
   designAwardCart,
   drivetrainCad,
   eventTable,
-  gears,
   labField,
   lastMatch,
   liftBench,
@@ -57,6 +56,7 @@ export const photos = {
   stadiumTall,
   teamLogo,
   teamPhoto,
+  trojanHorse,
   trophyDesign,
   trophyJudges,
 };

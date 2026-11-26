@@ -31,10 +31,7 @@ export const media = [
   },
   {
     title: "Design and build",
-    items: [
-      item(p.drivetrainCad, "Drivetrain in CAD"),
-      item(p.gears, "Gear train detail"),
-    ],
+    items: [item(p.drivetrainCad, "Drivetrain in CAD")],
   },
   {
     title: "Trophies",

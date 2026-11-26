@@ -21,6 +21,5 @@ export const home = {
     { src: p.drivetrainCad, alt: "Drivetrain in CAD" },
     { src: p.buildBench, alt: "A robot mid-build" },
     { src: p.liftBench, alt: "Testing a lift" },
-    { src: p.gears, alt: "Gear train detail" },
   ],
 };

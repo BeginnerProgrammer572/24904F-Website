@@ -22,8 +22,15 @@ export default function Media() {
       <External href={config.instagram}>{pages.media.handle}</External>
     </>
   );
+  // The team number with the horse standing in for the F; read aloud as "24904F".
+  const number = (
+    <span className="number" role="img" aria-label={site.number}>
+      <span className={`digits ${rye.className}`} aria-hidden="true">{site.number.slice(0, -1)}</span>
+      <Image src={photos.trojanHorse} alt="" sizes="200px" preload />
+    </span>
+  );
   return (
-    <Page hero={{ title, row: true, above: site.number, aboveClass: rye.className }}>
+    <Page hero={{ title, row: true, above: number }}>
       <MediaGallery sections={media} />
     </Page>
   );
