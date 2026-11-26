@@ -17,7 +17,7 @@ const routes = {
   ...Object.fromEntries(
     seasons.map((s) => [
       `/seasons/${s.id}`,
-      [s.photo, ...[...(s.gallery ?? []), ...s.sliders.flatMap((x) => x.items)].map((i) => i.src)],
+      [s.header ?? s.photo, ...[...(s.galleries ?? []), ...s.sliders].flatMap((x) => x.items).map((i) => i.src)],
     ]),
   ),
   "/software": [pages.software.hero.photo],

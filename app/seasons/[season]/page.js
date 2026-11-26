@@ -31,7 +31,7 @@ export default async function SeasonPage({ params }) {
         em: season.id,
         sub: `${season.level.split(" · ").join(", ")}. ${season.blurb}`,
         chips: season.stats,
-        photo: season.photo,
+        photo: season.header ?? season.photo,
         position: season.position,
       }}
     >
@@ -55,11 +55,16 @@ export default async function SeasonPage({ params }) {
           <Calendar events={season.events} />
         </section>
       )}
-      {season.gallery && (
+      {season.galleries && (
         <section className="blk">
           <h2>Photos</h2>
-          <PhotoGrid items={season.gallery} />
-          {season.video && <SeasonVideo {...season.video} />}
+          {season.galleries.map((g) => (
+            <div className="sub-gallery" key={g.title}>
+              <h3>{g.title}</h3>
+              <PhotoGrid items={g.items} className={g.items.length === 1 ? "single" : ""} />
+              {g.video && <SeasonVideo {...g.video} />}
+            </div>
+          ))}
         </section>
       )}
       {season.sliders.map((slider) => (

@@ -35,6 +35,11 @@ describe("content", () => {
     }
   });
 
+  it("lists the 25-26 results newest first", () => {
+    const results = seasons.find((s) => s.id === "25-26").results;
+    expect(results.map((r) => r.when)).toEqual(["State at CSUB", "Last Chance", "League playoffs", "League season"]);
+  });
+
   it("keeps the five awards in the old order", () => {
     expect(allAwards.map((a) => a.season)).toEqual(["26-27", "25-26", "25-26", "25-26", "24-25"]);
   });

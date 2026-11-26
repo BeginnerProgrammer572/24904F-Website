@@ -71,6 +71,8 @@ export const seasons = [
     id: "25-26",
     game: "Push Back",
     level: "10th grade · 2nd season",
+    // The header only; the home page card for this season stays without a photo.
+    header: p.pbState2,
     position: "center 45%",
     blurb: "A Build Award and a quarterfinal run at State, reached through a skills-only Last Chance tournament.",
     stats: [
@@ -81,7 +83,7 @@ export const seasons = [
     ],
     robot: {
       name: "",
-      desc: "The State robot is the design that won the Build Award, and it was a very special build for the team. This was the year the team moved to PROS (C++) and first used polycarbonate, pistons and flex wheels, on a 3 gap drivetrain. The league playoffs robot is shown further down the photos.",
+      desc: "The State robot is the design that won the Build Award, and it was a very special build for the team. This was the year the team moved to PROS (C++) and first used polycarbonate, pistons and flex wheels, on a 3 gap drivetrain. The league playoffs robot is shown further down, under its own heading.",
       specs: [
         ["Game", "Push Back"],
         ["Code", "C++ on PROS"],
@@ -92,24 +94,30 @@ export const seasons = [
         ["First year using", "Polycarbonate, pistons, flex wheels"],
       ],
     },
-    gallery: [
-      { src: p.pbState1, alt: "State robot" },
-      { src: p.pbState2, alt: "State robot, top view" },
-      { src: p.pbDrivetrain, alt: "League playoffs robot drivetrain" },
-      { src: p.pbTournamentAngle, alt: "League playoffs robot" },
-      { src: p.pbTournamentFront, alt: "League playoffs robot, front" },
-      { src: p.pbBenchFront, alt: "League playoffs robot on the bench" },
+    // Photo subsections. pb-state-2 is this page's header, so it is not repeated here.
+    galleries: [
+      { title: "State robot", items: [{ src: p.pbState1, alt: "State robot" }] },
+      {
+        title: "League playoffs robot",
+        items: [
+          { src: p.pbDrivetrain, alt: "League playoffs robot drivetrain" },
+          { src: p.pbTournamentAngle, alt: "League playoffs robot" },
+          { src: p.pbTournamentFront, alt: "League playoffs robot, front" },
+          { src: p.pbBenchFront, alt: "League playoffs robot on the bench" },
+        ],
+        video: {
+          src: "/video/pb-driver-view.mp4",
+          poster: "/video/pb-driver-view-poster.jpg",
+          label: "Push Back driver view video",
+        },
+      },
     ],
-    video: {
-      src: "/video/pb-driver-view.mp4",
-      poster: "/video/pb-driver-view-poster.jpg",
-      label: "Push Back driver view video",
-    },
+    // Newest first; at the same event, the higher award first.
     results: [
-      { when: "League season", what: "Judges Award at regionals", detail: "Won at the league playoffs.", win: true },
-      { when: "League playoffs", what: "Lost in the semifinals", detail: "That missed the direct route to State, so the team looked for another way in." },
-      { when: "Last Chance", what: "Placed 8th and qualified for State", detail: "A skills-only tournament the team found through networking.", win: true },
       { when: "State at CSUB", what: "Build Award", detail: "Ranked #7 of 35 teams. Lost the quarterfinal after missing the match with a late-arrival penalty. Other teams started asking to ally.", win: true },
+      { when: "Last Chance", what: "Placed 8th and qualified for State", detail: "A skills-only tournament the team found through networking.", win: true },
+      { when: "League playoffs", what: "Lost in the semifinals", detail: "That missed the direct route to State, so the team looked for another way in." },
+      { when: "League season", what: "Judges Award at regionals", detail: "Won at the league playoffs.", win: true },
     ],
     events: [],
     sliders: [],

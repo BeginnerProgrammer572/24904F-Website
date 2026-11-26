@@ -51,7 +51,7 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Small gold text on light backgrounds uses `#756938` for contrast; `#b2a371` stays on dark backgrounds.
 - Header photos use a darker flat overlay, and shorter headers add a flat full-width shade behind the title.
 - Media header, number: `24904` in Rye (`next/font/google`, this page only) in gold, followed by `assets/photos/trojan-horse.png` standing in for the F, used as is. The horse matches the digit height and baseline, with digit-like spacing. Digits and horse are centred and scale as one unit, and screen readers read "24904F". It is as large as fits (24 px side margins).
-- Media header, row: the team logo (on a square white block, not redrawn or recoloured) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/, on one row at 375 px.
+- Media header, row: Instagram's glyph (from `simple-icons`, unaltered, one white colour, 0.9em, vertically centred) beside `@foothill_robotics` in lowercase, linked to https://www.instagram.com/foothill_robotics/, on one row at 375 px. The row keeps a 1.5em height. The nav keeps the team logo.
 - Media header, spacing: three equal gaps (nav to number, number to logo row, logo row to the content panel).
 
 ## Sponsor logo loop
@@ -73,8 +73,12 @@ Added from the updated `reference/index.html` 2025-26 entry, which is the source
 | `pb-tournament-front.jpg` | League playoffs robot, front | Competition |
 | `pb-bench-front.jpg` | League playoffs robot on the bench | Robots |
 
-- The season page shows them in that order in a Photos section.
+- On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card). The Photos section has two subsections: "State robot" (`pb-state-1.jpg`) and "League playoffs robot" (drivetrain, tournament angle, tournament front, bench front, then the video). `pb-state-2.jpg` still appears on Media.
+- The robot description's last sentence reads "The league playoffs robot is shown further down, under its own heading." (changed from "...further down the photos." in `reference/index.html`).
 - Video: `public/video/pb-driver-view.mp4` (poster `pb-driver-view-poster.jpg`), below the photos on the 25-26 page only: controls, muted, playsinline, preload metadata, no autoplay. The Media gallery shows images only, so the video is not there.
+
+## Order of results and awards
+Every season, including future ones, lists results and awards from the most recent at the top to the least recent at the bottom, on its season page and in its Awards page section. At the same event, the higher award comes first.
 
 ## Excluded photo
 `gears.jpg` (the gear-train close-up, "Gear train detail") is removed from the whole site. Do not re-add it from `reference/`. The skip list in `scripts/prepare-photos.mjs` holds it, along with `pushback-build.jpg` (a repeat shot) and `media-qr.png` (the old QR code).
