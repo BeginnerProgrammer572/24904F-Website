@@ -17,7 +17,7 @@ export default function Media() {
   const title = (
     <>
       <span className="handle-logo">
-        <Image src={photos.teamLogo} alt="Team logo" sizes="120px" preload />
+        <Image src={photos.teamLogo} alt="Team logo" sizes="120px" loading="eager" />
       </span>
       <External href={config.instagram}>{pages.media.handle}</External>
     </>
@@ -26,7 +26,7 @@ export default function Media() {
   const number = (
     <span className="number" role="img" aria-label={site.number}>
       <span className={`digits ${rye.className}`} aria-hidden="true">{site.number.slice(0, -1)}</span>
-      <Image src={photos.trojanHorse} alt="" sizes="200px" preload />
+      <Image src={photos.trojanHorse} alt="" sizes="200px" loading="eager" fetchPriority="high" />
     </span>
   );
   return (

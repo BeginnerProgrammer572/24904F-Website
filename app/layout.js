@@ -1,9 +1,10 @@
 import { Big_Shoulders, IBM_Plex_Sans } from "next/font/google";
+import Analytics from "@/components/analytics/Analytics";
 import Footer from "@/components/layout/Footer";
 import Nav from "@/components/layout/Nav";
 import { loadingFx } from "@/components/loading/fx";
 import { heroWait } from "@/components/motion/heroWait";
-import { site } from "@/content/config";
+import { site, siteUrl } from "@/content/config";
 import "./globals.css";
 
 // "Big Shoulders Display" is the largest optical size of this family (see globals.css).
@@ -17,8 +18,13 @@ const display = Big_Shoulders({
 const body = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex" });
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: { default: site.title, template: `%s | ${site.team} ${site.number}` },
   description: site.description,
+  // "./" makes each page canonical to its own path.
+  alternates: { canonical: "./" },
+  openGraph: { siteName: `${site.team} ${site.number}`, type: "website", locale: "en_US" },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }) {
@@ -35,6 +41,7 @@ export default function RootLayout({ children }) {
         <Nav />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

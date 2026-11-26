@@ -29,6 +29,12 @@ await sharp(path.join(SRC, "team-logo.jpg"))
   .png()
   .toFile("app/icon.png");
 
+// Social preview image (Next.js picks it up by its file name).
+await sharp(path.join(SRC, "team-photo.jpg"))
+  .resize(1200, 630, { fit: "cover" })
+  .jpeg({ quality: 82, mozjpeg: true })
+  .toFile("app/opengraph-image.jpg");
+
 // Static imports give next/image the dimensions, so there is no layout shift.
 // Listing the output folder keeps files added there directly (trojan-horse.png).
 const outputs = (await readdir(OUT)).sort();

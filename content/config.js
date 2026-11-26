@@ -6,6 +6,12 @@ export const config = {
   coachInstagram: "https://www.instagram.com/roboticsatthehill",
 };
 
+// The live address, used for social previews, the sitemap and canonical links.
+// Set NEXT_PUBLIC_SITE_URL; otherwise Vercel's production address is used.
+const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || (vercelHost ? `https://${vercelHost}` : "http://localhost:3000");
+
 export const site = {
   team: "Trojan Horse",
   number: "24904F",

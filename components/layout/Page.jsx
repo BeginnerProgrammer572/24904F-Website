@@ -9,15 +9,17 @@ export default function Page({ hero, children }) {
   // `row` centres the title as one line, for a header with no photo; `above` is a line over it.
   const { title, em, sub, chips, photo, position = "center 30%", row, above, tall } = hero;
   return (
-    <div>
-      <div className={`hero ${tall ? "tall" : "short"}${row ? " row" : ""}`}>
+    <main>
+      <div className={["hero", tall ? "tall" : "short", row && "row"].filter(Boolean).join(" ")}>
         {photo && (
           <div className="hero-img">
             <Image
               src={photo}
               alt=""
               fill
-              preload
+              // The largest thing on screen: fetch it first, never lazily.
+              loading="eager"
+              fetchPriority="high"
               sizes="100vw"
               style={{ objectPosition: position }}
             />
@@ -42,9 +44,9 @@ export default function Page({ hero, children }) {
           )}
         </HeroEntrance>
       </div>
-      <main className="sheet" id="content">
+      <div className="sheet" id="content">
         <Reveals className="sheet-in">{children}</Reveals>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
