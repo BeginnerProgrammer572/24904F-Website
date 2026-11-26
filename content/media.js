@@ -15,6 +15,8 @@ export const media = [
       item(p.designAwardCart, "Design Award at RoBOOtics SPOOKtacular"),
       item(p.eventTable, "Pit table at a tournament"),
       item(p.pitWork, "Working on the robot in the pit"),
+      item(p.pbTournamentAngle, "League playoffs robot"),
+      item(p.pbTournamentFront, "League playoffs robot, front"),
     ],
   },
   {
@@ -27,6 +29,10 @@ export const media = [
       item(p.robotSide, "Claw and lift, side view"),
       item(p.pushbackRobot, "Our first Override design"),
       item(p.stadiumBench, "Bebop at the stadium"),
+      item(p.pbState1, "State robot"),
+      item(p.pbState2, "State robot, top view"),
+      item(p.pbDrivetrain, "League playoffs robot drivetrain"),
+      item(p.pbBenchFront, "League playoffs robot on the bench"),
     ],
   },
   {

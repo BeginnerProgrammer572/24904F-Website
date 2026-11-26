@@ -9,6 +9,12 @@ import eventTable from "@/assets/photos/event-table.jpg";
 import labField from "@/assets/photos/lab-field.jpg";
 import lastMatch from "@/assets/photos/last-match.jpg";
 import liftBench from "@/assets/photos/lift-bench.jpg";
+import pbBenchFront from "@/assets/photos/pb-bench-front.jpg";
+import pbDrivetrain from "@/assets/photos/pb-drivetrain.jpg";
+import pbState1 from "@/assets/photos/pb-state-1.jpg";
+import pbState2 from "@/assets/photos/pb-state-2.jpg";
+import pbTournamentAngle from "@/assets/photos/pb-tournament-angle.jpg";
+import pbTournamentFront from "@/assets/photos/pb-tournament-front.jpg";
 import pitWork from "@/assets/photos/pit-work.jpg";
 import plaquesSign2 from "@/assets/photos/plaques-sign-2.jpg";
 import plaquesSign from "@/assets/photos/plaques-sign.jpg";
@@ -40,6 +46,12 @@ export const photos = {
   labField,
   lastMatch,
   liftBench,
+  pbBenchFront,
+  pbDrivetrain,
+  pbState1,
+  pbState2,
+  pbTournamentAngle,
+  pbTournamentFront,
   pitWork,
   plaquesSign2,
   plaquesSign,

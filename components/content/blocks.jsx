@@ -64,7 +64,16 @@ export function SpecTable({ specs }) {
   );
 }
 
-const shortDate = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+// Never autoplays; only its metadata is fetched until someone presses play.
+export function SeasonVideo({ src, poster, label }) {
+  return (
+    <video className="season-video" src={src} poster={poster} aria-label={label} controls muted playsInline preload="metadata">
+      <a href={src}>{label}</a>
+    </video>
+  );
+}
+
+const shortDate =new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
 
 export function Calendar({ events }) {
   return (

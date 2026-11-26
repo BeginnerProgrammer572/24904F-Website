@@ -81,12 +81,29 @@ export const seasons = [
     ],
     robot: {
       name: "",
-      desc: "This was the year the team moved to PROS (C++) and started using pneumatics.",
+      desc: "The State robot is the design that won the Build Award, and it was a very special build for the team. This was the year the team moved to PROS (C++) and first used polycarbonate, pistons and flex wheels, on a 3 gap drivetrain. The league playoffs robot is shown further down the photos.",
       specs: [
         ["Game", "Push Back"],
         ["Code", "C++ on PROS"],
-        ["New this year", "Pneumatics"],
+        ["Drivetrain", "66W, 3 gap"],
+        ["Intake", "11W"],
+        ["Outtake", "11W"],
+        ["Motors", "All blue cartridges"],
+        ["First year using", "Polycarbonate, pistons, flex wheels"],
       ],
+    },
+    gallery: [
+      { src: p.pbState1, alt: "State robot" },
+      { src: p.pbState2, alt: "State robot, top view" },
+      { src: p.pbDrivetrain, alt: "League playoffs robot drivetrain" },
+      { src: p.pbTournamentAngle, alt: "League playoffs robot" },
+      { src: p.pbTournamentFront, alt: "League playoffs robot, front" },
+      { src: p.pbBenchFront, alt: "League playoffs robot on the bench" },
+    ],
+    video: {
+      src: "/video/pb-driver-view.mp4",
+      poster: "/video/pb-driver-view-poster.jpg",
+      label: "Push Back driver view video",
     },
     results: [
       { when: "League season", what: "Judges Award at regionals", detail: "Won at the league playoffs.", win: true },

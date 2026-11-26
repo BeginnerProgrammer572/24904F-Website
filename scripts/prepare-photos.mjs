@@ -13,7 +13,8 @@ const SKIP = new Set(["pushback-build.jpg", "media-qr.png", "gears.jpg"]);
 const camel = (name) => name.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
 
 for (const dir of [OUT, "app", "content"]) await mkdir(dir, { recursive: true });
-const files = (await readdir(SRC)).filter((f) => !SKIP.has(f)).sort();
+// Videos can sit in the same folder; they are served from public/video instead.
+const files = (await readdir(SRC)).filter((f) => /\.(jpe?g|png)$/i.test(f) && !SKIP.has(f)).sort();
 
 for (const file of files) {
   const image = sharp(path.join(SRC, file))

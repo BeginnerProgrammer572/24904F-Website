@@ -15,7 +15,10 @@ const routes = {
     ...[...home.competition, ...trophies, ...home.build].map((i) => i.src),
   ],
   ...Object.fromEntries(
-    seasons.map((s) => [`/seasons/${s.id}`, [s.photo, ...s.sliders.flatMap((x) => x.items).map((i) => i.src)]]),
+    seasons.map((s) => [
+      `/seasons/${s.id}`,
+      [s.photo, ...[...(s.gallery ?? []), ...s.sliders.flatMap((x) => x.items)].map((i) => i.src)],
+    ]),
   ),
   "/software": [pages.software.hero.photo],
   "/team": [pages.team.hero.photo, ...robosaurus.map((i) => i.src)],

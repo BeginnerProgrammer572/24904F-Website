@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { MatchSection } from "@/components/charts/ChartSections";
 import { loadMatches } from "@/lib/chartData";
-import { Calendar, SpecTable } from "@/components/content/blocks";
+import { Calendar, SeasonVideo, SpecTable } from "@/components/content/blocks";
+import PhotoGrid from "@/components/content/PhotoGrid";
 import PhotoSlider from "@/components/content/PhotoSlider";
 import Page from "@/components/layout/Page";
 import SeasonTimeline from "@/components/motion/SeasonTimeline";
@@ -52,6 +53,13 @@ export default async function SeasonPage({ params }) {
         <section className="blk">
           <h2>Season Calendar</h2>
           <Calendar events={season.events} />
+        </section>
+      )}
+      {season.gallery && (
+        <section className="blk">
+          <h2>Photos</h2>
+          <PhotoGrid items={season.gallery} />
+          {season.video && <SeasonVideo {...season.video} />}
         </section>
       )}
       {season.sliders.map((slider) => (

@@ -61,6 +61,21 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - Seamless at any screen width.
 - Under `prefers-reduced-motion` (and without JavaScript), a still grid of all logos replaces the loop. Never show both.
 
+## Push Back (25-26) media
+Added from the updated `reference/index.html` 2025-26 entry, which is the source for the robot description, specs, order and captions. Originals are kept in `reference/images/` (not committed or built).
+
+| File | Caption | Media page category |
+|---|---|---|
+| `pb-state-1.jpg` | State robot | Robots |
+| `pb-state-2.jpg` | State robot, top view | Robots |
+| `pb-drivetrain.jpg` | League playoffs robot drivetrain | Robots |
+| `pb-tournament-angle.jpg` | League playoffs robot | Competition |
+| `pb-tournament-front.jpg` | League playoffs robot, front | Competition |
+| `pb-bench-front.jpg` | League playoffs robot on the bench | Robots |
+
+- The season page shows them in that order in a Photos section.
+- Video: `public/video/pb-driver-view.mp4` (poster `pb-driver-view-poster.jpg`), below the photos on the 25-26 page only: controls, muted, playsinline, preload metadata, no autoplay. The Media gallery shows images only, so the video is not there.
+
 ## Excluded photo
 `gears.jpg` (the gear-train close-up, "Gear train detail") is removed from the whole site. Do not re-add it from `reference/`. The skip list in `scripts/prepare-photos.mjs` holds it, along with `pushback-build.jpg` (a repeat shot) and `media-qr.png` (the old QR code).
 
