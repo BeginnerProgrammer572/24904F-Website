@@ -73,11 +73,23 @@ export function SpecTable({ specs }) {
 }
 
 // Never autoplays; only its metadata is fetched until someone presses play.
-export function SeasonVideo({ src, poster, label }) {
+export function SeasonVideo({ src, poster, label, caption, width = 16, height = 9, maxWidth = 720 }) {
   return (
-    <video className="season-video" src={src} poster={poster} aria-label={label} controls muted playsInline preload="metadata">
-      <a href={src}>{label}</a>
-    </video>
+    <figure className="season-video" style={{ maxWidth }}>
+      <video
+        src={src}
+        poster={poster}
+        aria-label={label}
+        style={{ aspectRatio: `${width} / ${height}` }}
+        controls
+        muted
+        playsInline
+        preload="metadata"
+      >
+        <a href={src}>{label}</a>
+      </video>
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
   );
 }
 

@@ -6,6 +6,9 @@ import buildBench from "@/assets/photos/build-bench.jpg";
 import designAwardCart from "@/assets/photos/design-award-cart.jpg";
 import drivetrainCad from "@/assets/photos/drivetrain-cad.jpg";
 import eventTable from "@/assets/photos/event-table.jpg";
+import hsPlayoff1 from "@/assets/photos/hs-playoff-1.jpg";
+import hsPlayoff2 from "@/assets/photos/hs-playoff-2.jpg";
+import hsRoboticsPoster from "@/assets/photos/hs-robotics-poster.jpg";
 import instagramGlyph from "@/assets/photos/instagram-glyph.png";
 import labField from "@/assets/photos/lab-field.jpg";
 import lastMatch from "@/assets/photos/last-match.jpg";
@@ -44,6 +47,9 @@ export const photos = {
   designAwardCart,
   drivetrainCad,
   eventTable,
+  hsPlayoff1,
+  hsPlayoff2,
+  hsRoboticsPoster,
   instagramGlyph,
   labField,
   lastMatch,

@@ -60,10 +60,10 @@ export default async function SeasonPage({ params }) {
         <section className="blk">
           <h2>Photos</h2>
           {season.galleries.map((g) => (
-            <div className="sub-gallery" key={g.title}>
-              <h3>{g.title}</h3>
+            <div className="sub-gallery" key={g.title ?? "all"}>
+              {g.title && <h3>{g.title}</h3>}
               <PhotoGrid items={g.items} className={g.items.length <= 2 ? "few" : ""} />
-              {g.video && <SeasonVideo {...g.video} />}
+              {g.videos?.map((video) => <SeasonVideo key={video.src} {...video} />)}
             </div>
           ))}
         </section>

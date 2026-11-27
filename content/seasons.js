@@ -115,11 +115,13 @@ export const seasons = [
           { src: p.pbTournamentFront, alt: "League playoffs robot, front" },
           { src: p.pbBenchFront, alt: "League playoffs robot on the bench" },
         ],
-        video: {
-          src: "/video/pb-driver-view.mp4",
-          poster: "/video/pb-driver-view-poster.jpg",
-          label: "Push Back driver view video",
-        },
+        videos: [
+          {
+            src: "/video/pb-driver-view.mp4",
+            poster: "/video/pb-driver-view-poster.jpg",
+            label: "Push Back driver view video",
+          },
+        ],
       },
     ],
     // Newest first; at the same event, the higher award first.
@@ -150,13 +152,37 @@ export const seasons = [
     ],
     robot: {
       name: "",
-      desc: "Funding came through the Kern High School District after several rejections, about $3,000 to launch the team.",
+      desc: "Funding came through the Kern High School District after several rejections, about $3,000 to launch the team. For playoffs the team borrowed pistons and flex wheels and gave them back afterward, so this was its first time coding, building and driving with pistons, but it could not do any more testing with them.",
       specs: [
         ["Game", "High Stakes"],
         ["Code", "C++"],
+        ["Regular season", "44W drivetrain, 22W lift, all green cartridges"],
+        ["Playoff robot", "44W drivetrain, 11W intake, 11W Lady Brown"],
+        ["Pneumatics", "1 piston for the mobile goal mechanism"],
         ["Funding", "District start-up funds, CDE Academy, school fundraisers"],
       ],
     },
+    // One untitled group: photos, then the videos in order. Sizes are the videos' own shapes.
+    galleries: [
+      {
+        items: [
+          { src: p.hsPlayoff1, alt: "High Stakes playoff robot" },
+          { src: p.hsPlayoff2, alt: "High Stakes playoff robot" },
+          { src: p.hsRoboticsPoster, alt: "Robotics poster", position: "center 30%" },
+        ],
+        videos: [
+          {
+            src: "/video/hs-match.mp4",
+            label: "High Stakes match video",
+            caption: "We are the red plate team at the top.",
+            width: 540,
+            height: 960,
+            maxWidth: 320,
+          },
+          { src: "/video/hs-playoff.mp4", label: "High Stakes playoff video", width: 540, height: 302 },
+        ],
+      },
+    ],
     results: [{ when: "Regionals", what: "Judges Award", detail: "The team's first award.", win: true }],
     events: [],
     sliders: [],

@@ -93,6 +93,14 @@ These are on the 25-26 page only; they are no longer on the Media page (see "Med
 - The robot description's last sentence reads "The league playoffs robot is shown further down, under its own heading." (changed from "...further down the photos." in `reference/index.html`).
 - Video: `public/video/pb-driver-view.mp4` (poster `pb-driver-view-poster.jpg`), below the photos on the 25-26 page only: controls, muted, playsinline, preload metadata, no autoplay. The Media gallery shows images only, so the video is not there.
 
+## High Stakes (24-25) media
+The 2024-25 entry in `reference/index.html` is the source for the robot description, specs, photo order and captions, copied exactly.
+
+- On the 24-25 season page only, not on the Media page. There is no header photo and the home season card has none.
+- One "Photos" section without subsections: `hs-playoff-1.jpg` ("High Stakes playoff robot"), `hs-playoff-2.jpg` ("High Stakes playoff robot"), `hs-robotics-poster.jpg` ("Robotics poster").
+- Then the videos in `public/video/`: `hs-match.mp4` with the visible caption "We are the red plate team at the top." (320 px wide at most), then `hs-playoff.mp4` (720 px at most, no caption).
+- Both: controls, muted, playsinline, preload metadata, no autoplay, no poster image.
+
 ## Order of results and awards
 Every season, including future ones, lists results and awards from the most recent at the top to the least recent at the bottom, on its season page and in its Awards page section. At the same event, the higher award comes first.
 
