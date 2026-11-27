@@ -141,6 +141,9 @@
   .gal img { width: 100%; height: 300px; object-fit: cover; transition: transform .5s; }
   .gal figure:hover img { transform: scale(1.05); }
   .gal img.tall { height: 400px; }
+  /* Whole photo, never cropped (the home trophies): taller cards, a little space, no hover zoom. */
+  .gal.whole img { height: min(540px, 150vw); padding: 12px; object-fit: contain; }
+  .gal.whole figure:hover img { transform: none; }
   .logo-band { display: none; background: #fff; padding: 29px 0; container-type: inline-size; }
   /* No logo is wider than the strip; object-fit keeps its proportions. */
   .logo-band img { max-width: 100cqw; }

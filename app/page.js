@@ -24,7 +24,7 @@ export default function Home() {
       </section>
       <section className="blk">
         <h2>Trophies</h2>
-        <PhotoGrid items={trophies} />
+        <PhotoGrid items={trophies} className="whole" />
       </section>
       <section className="blk">
         <h2>Awards</h2>

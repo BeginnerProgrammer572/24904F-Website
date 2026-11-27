@@ -31,7 +31,7 @@ export default async function SeasonPage({ params }) {
         em: season.id,
         sub: `${season.level.split(" · ").join(", ")}. ${season.blurb}`,
         chips: season.stats,
-        photo: season.header ?? season.photo,
+        photo: season.photo,
         position: season.position,
         portrait: season.headerPortrait,
       }}

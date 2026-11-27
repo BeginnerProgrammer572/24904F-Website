@@ -60,6 +60,9 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - **Approved exception:** `plaques-sign.jpg` stays in Trophies, because it shows all three awards (Design Award 26-27, Build Award 25-26, High Stakes Judges' Award 24-25). `trophy-design.jpg` and `trophy-judges.jpg` are not added.
 - This changes only the Media page. Season pages, the home page and the Awards page keep their photos, and no image files are deleted. A category with no photos loses its heading.
 
+## Home page trophies
+The home page's Trophies photos are shown whole, never cropped: taller cards of equal height (540 px at most), a little space around each photo on the section's background, no borders, shadows or hover zoom.
+
 ## Sponsor logo loop
 - The section heading is `THANK YOU TO OUR SPONSORS!`, centred above the logos (it replaces `Sponsors`).
 - Loop logos are 67.2 px tall (20% larger than before) in a 133 px strip, never wider than the strip. Still-grid logos are also 20% larger where their tile allows; tiles do not change size.
@@ -81,7 +84,7 @@ Added from the updated `reference/index.html` 2025-26 entry, which is the source
 
 These are on the 25-26 page only; they are no longer on the Media page (see "Media page: current season only").
 
-- On the 25-26 page `pb-state-2.jpg` is the header photo (not on the home season card). It is a cover-style header with no empty bars, made taller than other season headers (the whole photo's height at full width, at most the screen height) so less is cropped, favouring the lower left (`30% 70%`). On phones it is at least 640 px tall (or the screen height), trimming the sides so the robot shows above the title.
+- `pb-state-2.jpg` is the 25-26 header photo and the image on the Push Back season card on the home page, both cropped around the same focal point. The header is a cover-style header with no empty bars, made taller than other season headers (the whole photo's height at full width, at most the screen height) so less is cropped, favouring the lower left (`30% 70%`). On phones it is at least 640 px tall (or the screen height), trimming the sides so the robot shows above the title.
 - The 25-26 code is listed as "C++" (not "C++ on PROS"), and the description says "The code was written in C++." instead of saying the team moved to PROS that year (this differs from `reference/index.html`).
 - The Photos section has two subsections: "State robot" (`pb-state-1.jpg`, `pb-state-2.jpg`) and "League playoffs robot" (drivetrain, tournament angle, tournament front, bench front, then the video).
 - **Approved exception to the one-photo-per-page rule, this page only:** `pb-state-2.jpg` is both the header and in "State robot".

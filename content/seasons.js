@@ -72,8 +72,9 @@ export const seasons = [
     id: "25-26",
     game: "Push Back",
     level: "10th grade · 2nd season",
-    // The header only; the home page card for this season stays without a photo.
-    header: p.pbState2,
+    photo: p.pbState2,
+    // The home card crops around the same focal point as the header.
+    focusCard: true,
     // A tall photo: give the header more height, and favour its lower left.
     headerPortrait: true,
     position: "30% 70%",

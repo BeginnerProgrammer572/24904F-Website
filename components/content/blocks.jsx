@@ -25,7 +25,15 @@ export function SeasonCards({ seasons }) {
     <div className="grid-3">
       {seasons.map((s) => (
         <Link className="scard" href={seasonHref(s)} key={s.id}>
-          {s.photo && <Image src={s.photo} alt="" fill sizes="(max-width: 760px) 100vw, 340px" />}
+          {s.photo && (
+            <Image
+              src={s.photo}
+              alt=""
+              fill
+              sizes="(max-width: 760px) 100vw, 340px"
+              style={s.focusCard ? { objectPosition: s.position } : undefined}
+            />
+          )}
           <div>
             <b>{s.game}</b>
             <span>{s.id}</span>
