@@ -3,7 +3,12 @@ import { photos as p } from "./photos";
 const item = (src, alt, extra) => ({ src, alt, ...extra });
 const dinos = [p.robosaurus1, p.robosaurus2, p.robosaurus3];
 
-export const trophies = [item(p.trophyDesign, "Design Award"), item(p.trophyJudges, "Judges' Award")];
+// Home page only. Newest first.
+export const trophies = [
+  item(p.trophyDesign, "Design Award"),
+  item(p.trophyBuild, "Build Award"),
+  item(p.trophyJudges, "Judges' Award"),
+];
 
 export const robosaurus = dinos.map((src) => item(src, "RoboSaurus, the team mascot"));
 

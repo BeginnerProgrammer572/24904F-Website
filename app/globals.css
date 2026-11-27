@@ -142,8 +142,12 @@
   .gal figure:hover img { transform: scale(1.05); }
   .gal img.tall { height: 400px; }
   /* Whole photo, never cropped (the home trophies): taller cards, a little space, no hover zoom. */
-  .gal.whole img { height: min(540px, 150vw); padding: 12px; object-fit: contain; }
+  /* Three trophies: one row or one column, never two and a leftover. The box has the
+     trophy photos' usual shape, so all are drawn at the same height. */
+  .gal.whole { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gal.whole img { height: auto; aspect-ratio: 45 / 69; max-height: 540px; padding: 12px; object-fit: contain; }
   .gal.whole figure:hover img { transform: none; }
+  @media (max-width: 640px) { .gal.whole { grid-template-columns: minmax(0, 1fr); } }
   .logo-band { display: none; background: #fff; padding: 29px 0; container-type: inline-size; }
   /* No logo is wider than the strip; object-fit keeps its proportions. */
   .logo-band img { max-width: 100cqw; }

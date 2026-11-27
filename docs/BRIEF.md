@@ -61,7 +61,7 @@ Redirect old hash links on `/` (`#media`, `#season-2026-27`, etc.) to the new ro
 - This changes only the Media page. Season pages, the home page and the Awards page keep their photos, and no image files are deleted. A category with no photos loses its heading.
 
 ## Home page trophies
-The home page's Trophies photos are shown whole, never cropped: taller cards of equal height (540 px at most), a little space around each photo on the section's background, no borders, shadows or hover zoom.
+The home page's Trophies are, newest first: Design Award (26-27, `trophy-design.jpg`), Build Award (25-26, `trophy-build.jpg`), Judges' Award (24-25, `trophy-judges.jpg`). Photos are shown whole, never cropped: equal cards (540 px tall at most), a little space around each photo on the section's background, no borders, shadows or hover zoom. Three across, or one per row at 640 px and narrower; never two and a leftover. `trophy-build.jpg` was added straight to `assets/photos/`.
 
 ## Sponsor logo loop
 - The section heading is `THANK YOU TO OUR SPONSORS!`, centred above the logos (it replaces `Sponsors`).
@@ -96,8 +96,9 @@ These are on the 25-26 page only; they are no longer on the Media page (see "Med
 ## High Stakes (24-25) media
 The 2024-25 entry in `reference/index.html` is the source for the robot description, specs, photo order and captions, copied exactly.
 
-- On the 24-25 season page only, not on the Media page. There is no header photo and the home season card has none.
-- One "Photos" section without subsections: `hs-playoff-1.jpg` ("High Stakes playoff robot"), `hs-playoff-2.jpg` ("High Stakes playoff robot"), `hs-robotics-poster.jpg` ("Robotics poster").
+- Not on the Media page.
+- `hs-playoff-1.jpg` is the 24-25 header (same cover style and height as other season headers, focal point `center 30%`) and the image on the High Stakes home card (centred). Because it is the header, it is not in the page's gallery.
+- One "Photos" section without subsections: `hs-playoff-2.jpg` ("High Stakes playoff robot"), `hs-robotics-poster.jpg` ("Robotics poster").
 - Then the videos in `public/video/`: `hs-match.mp4` with the visible caption "We are the red plate team at the top." (320 px wide at most), then `hs-playoff.mp4` (720 px at most, no caption).
 - Both: controls, muted, playsinline, preload metadata, no autoplay, no poster image.
 

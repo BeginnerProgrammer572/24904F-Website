@@ -143,7 +143,10 @@ export const seasons = [
     id: "24-25",
     game: "High Stakes",
     level: "9th grade · 1st season",
-    position: "center 48%",
+    // The header and the home card. The focal point keeps the robot above the title;
+    // the card is nearly the photo's own shape, so it stays centred.
+    photo: p.hsPlayoff1,
+    position: "center 30%",
     blurb: "The year the Foothill team started. Funding, parts and the first competition season.",
     stats: [
       { v: "Judges", k: "Award at regionals" },
@@ -166,7 +169,6 @@ export const seasons = [
     galleries: [
       {
         items: [
-          { src: p.hsPlayoff1, alt: "High Stakes playoff robot" },
           { src: p.hsPlayoff2, alt: "High Stakes playoff robot" },
           { src: p.hsRoboticsPoster, alt: "Robotics poster", position: "center 30%" },
         ],

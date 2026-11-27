@@ -36,6 +36,7 @@ import stadiumTall from "@/assets/photos/stadium-tall.jpg";
 import teamLogo from "@/assets/photos/team-logo.jpg";
 import teamPhoto from "@/assets/photos/team-photo.jpg";
 import trojanHorse from "@/assets/photos/trojan-horse.png";
+import trophyBuild from "@/assets/photos/trophy-build.jpg";
 import trophyDesign from "@/assets/photos/trophy-design.jpg";
 import trophyJudges from "@/assets/photos/trophy-judges.jpg";
 
@@ -77,6 +78,7 @@ export const photos = {
   teamLogo,
   teamPhoto,
   trojanHorse,
+  trophyBuild,
   trophyDesign,
   trophyJudges,
 };
