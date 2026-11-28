@@ -13,6 +13,4 @@ export const team = {
   mission: "Build smart. Mentor others. Win together.",
   about:
     "Team 24904F is Foothill High School's VEX V5 team, partnered with the Computer Design and Engineering (CDE) Academy and the Kern High School District. The 0-period robotics class meets in Room 1003.",
-  before:
-    "Our programmer started on a middle school VEX team in 8th grade (2023-24, Over Under), joined a month late and became the top coder within a week, then moved the team from blocks to Python for its state competition.",
 };

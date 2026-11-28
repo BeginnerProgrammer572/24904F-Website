@@ -153,6 +153,8 @@ Same shot (keep the left one). The list lives in `content/sameShot.js`:
 Build the CSV loaders and chart components, but hide each chart until its file has real data. Sample data is allowed only in tests and a development-only preview. Give each chart a short text summary for screen readers.
 
 ## Content rules
+- Show no grade levels anywhere (pages, metadata or alt text), even where `reference/index.html` has them. Season labels give only the count: "3rd season", "2nd season", "1st season".
+- The Team page has no "Before 24904F" section; it was removed on purpose. Do not re-add it from `reference/`.
 - Credit "Designed and built by Bryan Sobalvarro" on every page.
 - The site may say it is student-built. It must not say the robotics program is run by students; coaches run it.
 - Sponsor contacts are the two coaches' school emails only. Never add my personal email or phone.

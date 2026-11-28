@@ -29,7 +29,7 @@ export default async function SeasonPage({ params }) {
       hero={{
         title: season.game,
         em: season.id,
-        sub: `${season.level.split(" · ").join(", ")}. ${season.blurb}`,
+        sub: `${season.level}. ${season.blurb}`,
         chips: season.stats,
         photo: season.photo,
         position: season.position,

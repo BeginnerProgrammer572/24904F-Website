@@ -38,12 +38,6 @@ export default function Team() {
         <p className="lede">{pages.team.mascotLede}</p>
         <PhotoGrid items={robosaurus} />
       </section>
-      <section className="blk">
-        <div className="card">
-          <h3>Before 24904F</h3>
-          <p>{team.before}</p>
-        </div>
-      </section>
     </Page>
   );
 }

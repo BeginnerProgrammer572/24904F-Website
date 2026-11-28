@@ -5,7 +5,7 @@ export const seasons = [
   {
     id: "26-27",
     game: "Override",
-    level: "11th grade · 3rd season",
+    level: "3rd season",
     photo: p.stadiumBench,
     position: "center 40%",
     blurb: "Bebop: a double reverse four-bar with a piston claw, programmed in C++ with PROS and EZ-Template.",
@@ -71,7 +71,7 @@ export const seasons = [
   {
     id: "25-26",
     game: "Push Back",
-    level: "10th grade · 2nd season",
+    level: "2nd season",
     photo: p.pbState2,
     // The home card crops around the same focal point as the header.
     focusCard: true,
@@ -142,7 +142,7 @@ export const seasons = [
   {
     id: "24-25",
     game: "High Stakes",
-    level: "9th grade · 1st season",
+    level: "1st season",
     // The header and the home card. The focal point keeps the robot above the title;
     // the card is nearly the photo's own shape, so it stays centred.
     photo: p.hsPlayoff1,
